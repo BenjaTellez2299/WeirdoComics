@@ -108,7 +108,7 @@ html{
 .menu__contenedor-img{
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 15px;
 }
 
@@ -129,7 +129,6 @@ html{
     width: 100%;
     display: flex;
     justify-content: center;
-    text-align: center;
 }
 
 .titulo__pic{

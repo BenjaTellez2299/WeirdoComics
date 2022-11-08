@@ -18,11 +18,11 @@
         </div>
         <nav>
             <ul class="nav__links">
-                <li class="nav__link"><a href="">Comics</a></li>
-                <li class="nav__link"><a href="">Articulos</a></li>
-                <li class="nav__link"><a href="">Usuarios</a></li>
-                <li class="nav__link"><a href="">Inventario</a></li>
-                <li class="nav__link"><a href="">Proveedores</a></li>
+                <li class="nav__link"><a href="{{route('consComic')}}">Comics</a></li>
+                <li class="nav__link"><a href="{{route('consArtic')}}">Articulos</a></li>
+                <li class="nav__link"><a href="{{route('consUsu')}}">Usuarios</a></li>
+                <li class="nav__link"><a href="{{route('invent')}}">Inventario</a></li>
+                <li class="nav__link"><a href="{{route('consProve')}}">Proveedores</a></li>
                 <li class="nav__link"><a href="">Ventas</a></li>
             </ul>
         </nav>
