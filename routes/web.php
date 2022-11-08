@@ -24,38 +24,3 @@ Route::get('menu', function () {
 Route::get('agregarComic', function () {
     return view('agregarComic');
 });
-
-<<<<<<< Updated upstream
-Route::get('consultarComics', function () {
-    return view('consultarComics');
-});
-
-=======
-Route::get('agregarArticulo', function () {
-    return view('agregarArticulo');
-});
-
-Route::get('agregarUsuario', function () {
-    return view('agregarUsuario');
-});
-
-Route::get('agregarProveedor', function () {
-    return view('agregarProveedor');
-});
-
-Route::get('editarComic', function () {
-    return view('editarComic');
-});
-
-Route::get('editarArticulo', function () {
-    return view('editarArticulo');
-});
-
-Route::get('editarProveedor', function () {
-    return view('editarProveedor');
-});
-
-Route::get('editarUsuario', function () {
-    return view('editarUsuario');
-});
->>>>>>> Stashed changes
