@@ -14,7 +14,7 @@
 
     <header class="nav">
         <div class="nav__logo">
-            <a href=""><img src="{!! asset('img/logob.png') !!}" alt="Logo Weirdo Comics" class="nav__img"></a>
+            <a href="{{route('menu')}}"><img src="{!! asset('img/logob.png') !!}" alt="Logo Weirdo Comics" class="nav__img"></a>
         </div>
         <nav>
             <ul class="nav__links">
