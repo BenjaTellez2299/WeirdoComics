@@ -8,6 +8,3 @@ Route::get('/', [controllerViews::class, 'showLogin'])->name('login');
 Route::get('menu', [controllerViews::class, 'showMenu'])->name('menu');
 
 Route::get('agregarComic', [controllerViews::class, 'addComic'])->name('addComic');
-
-Route::get('consultarComics', [controllerViews::class, 'consultComic'])->name('consultComics');
-
