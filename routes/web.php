@@ -25,3 +25,7 @@ Route::get('agregarComic', function () {
     return view('agregarComic');
 });
 
+Route::get('consultarComics', function () {
+    return view('consultarComics');
+});
+
