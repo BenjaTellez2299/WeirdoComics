@@ -291,4 +291,24 @@ html{
 }
 
 
+.form__img-inv{
+    width: 200px;
+}
 
+.contenedor__buscar{
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.form__buscar{
+    margin: 15px 0;
+    width: 80%;
+    border: 3px solid #000;
+}
+
+.img__buscar{
+    width: 50px;
+    margin: 5px;
+}
