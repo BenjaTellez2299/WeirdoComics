@@ -20,3 +20,8 @@ Route::get('/', function () {
 Route::get('menu', function () {
     return view('menu');
 });
+
+Route::get('agregarComic', function () {
+    return view('agregarComic');
+});
+
