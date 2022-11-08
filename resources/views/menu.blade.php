@@ -8,13 +8,13 @@
     
     <section class="menu__contenedor-img">
         <div class="menu__item">
-            <img src="{!! asset('img/image2.png') !!}" alt="comics" class="animate__animated animate__backInLeft">
+            <img src="{!! asset('img/image2.png') !!}" alt="comics" class="menu__img">
         </div>
         <div class="menu__item">
-            <img src="{!! asset('img/image1.png') !!}" alt="comics" class="animate__animated animate__backInDown">
+            <img src="{!! asset('img/image1.png') !!}" alt="comics" class="menu__img">
         </div>
         <div class="menu__item">
-            <img src="{!! asset('img/image3.png') !!}" alt="comics" class="animate__animated animate__backInRight">
+            <img src="{!! asset('img/image3.png') !!}" alt="comics" class="menu__img">
         </div>
     </section>
     
