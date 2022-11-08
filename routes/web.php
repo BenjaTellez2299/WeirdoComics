@@ -24,11 +24,3 @@ Route::get('menu', function () {
 Route::get('agregarComic', function () {
     return view('agregarComic');
 });
-
-Route::get('consultarComics', function () {
-    return view('consultarComics');
-});
-
-Route::get('inventario', function () {
-    return view('inventario');
-});
