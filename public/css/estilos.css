@@ -271,3 +271,46 @@ html{
     width: 50px;
     margin: 5px;
 }
+
+.table__contenedor{
+    margin: 50px auto;
+    width: 1300px;
+}
+
+.table__consultar{
+    background-color: #fff;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;  
+}
+
+.table__consultar th, td{
+    padding: 15px;
+}
+
+.table__consultar thead{
+    background-color: #a5a2ad;
+    border-bottom: 5px solid #000;
+    font-weight: 600;
+    color: #000;
+}
+
+.table__consultar tr:nth-child(even){
+    background-color: #cacbc9;
+}
+
+.table__consultar tr:hover td{
+    background-color: #7f7c92;
+    color: #fff;
+}
+
+.table__img{
+    width: 40px;
+    height: auto;
+    transition: all .3s;
+}
+
+.table__img:hover{
+    scale: 1.2;
+}
+
