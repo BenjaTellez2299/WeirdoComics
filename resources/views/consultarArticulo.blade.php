@@ -1,19 +1,19 @@
 @extends('plantilla')
 
-    @section('titulo','Consultar Comics')
+    @section('titulo','Consultar Articulo')
 
     @section('contenido')
 
     <div class="titulo__img">
-        <img src="{!! asset('img/consultarComic.png') !!}" alt="Consultar Comic" class="titulo__pic">
+        <img src="{!! asset('img/consultarArticulo.png') !!}" alt="Consultar Articulo" class="titulo__pic">
     </div>
 
     <div class="table__contenedor">
         <table class="table__consultar">
             <thead>
-                <th>Nombre</th>
-                <th>Edición</th>
-                <th>Compañía</th>
+                <th>Tipo</th>
+                <th>Marca</th>
+                <th>Descripción</th>
                 <th>Cantidad</th>
                 <th>Precio Compra</th>
                 <th>Precio Venta</th>
@@ -24,38 +24,38 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Batman: El regreso del caballero oscuro</td>
-                    <td>10ma</td>
-                    <td>DC</td>
-                    <td>5</td>
-                    <td>50</td>
-                    <td>100</td>
-                    <td>08-09-2022</td>
-                    <td>USA Comics</td>
+                    <td>Gorra Batman: Caballero de la noche</td>
+                    <td>DADIVIT</td>
+                    <td>Edición Especial</td>
+                    <td>3</td>
+                    <td>180</td>
+                    <td>400</td>
+                    <td>25-05-2022</td>
+                    <td>New Era</td>
                     <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
                     <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
                 <tr>
-                    <td>Spiderman: La última cacería de Kraven</td>
-                    <td>9na</td>
-                    <td>Marvel</td>
-                    <td>8</td>
-                    <td>55</td>
-                    <td>95</td>
-                    <td>30-07-2022</td>
-                    <td>USA Comics</td>
+                    <td>Figura de Acción Aquaman</td>
+                    <td>Mattel</td>
+                    <td>Masters of the Universe</td>
+                    <td>4</td>
+                    <td>280</td>
+                    <td>500</td>
+                    <td>21-05-2022</td>
+                    <td>Juguetron</td>
                     <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
                     <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
                 <tr>
-                    <td>Nausicaä - Hayao Miyazaki</td>
-                    <td>4ta</td>
-                    <td>Ghibli</td>
-                    <td>11</td>
-                    <td>40</td>
-                    <td>80</td>
-                    <td>15-04-2022</td>
-                    <td>Mangas Shipping</td>
+                    <td>Llavero Funko Keychain The Batman</td>
+                    <td>Funko</td>
+                    <td>The Batman</td>
+                    <td>15</td>
+                    <td>90</td>
+                    <td>200</td>
+                    <td>08-10-2022</td>
+                    <td>Funko Store</td>
                     <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
                     <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
