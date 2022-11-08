@@ -86,10 +86,11 @@ html{
     background-image: linear-gradient(0deg, #cacbc9 0, #a5a2ad 50%, #7f7c92 100%);
     /* position: absolute; */
     bottom: 0;
+    margin-top: 20px;
 }
 
 .foot__copy{
-    padding: 15px 10px;
+    padding: 20px 10px;
     text-align: center;
 }
 
@@ -234,6 +235,20 @@ html{
     transition: 0.3s;
 }
 
+.btn__form-editar{
+    border: 0;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+    padding: 9px 25px;
+    background: none;
+    border: 3px solid #ffd400;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
 .btn__form:hover{
     scale: 1.1;
 }
@@ -248,7 +263,10 @@ html{
     color: #fff;
 }
 
-
+.btn__form-editar:hover{
+    background: #ffd400;
+    color: #fff;
+}
 
 .form__img-inv{
     width: 200px;
@@ -264,7 +282,6 @@ html{
 .form__buscar{
     margin: 15px 0;
     width: 80%;
-    border: 3px solid #000;
 }
 
 .img__buscar{
