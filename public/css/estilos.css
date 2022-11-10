@@ -151,6 +151,11 @@ html{
     width: auto;
 }
 
+.titulo__principalVen{
+    height: 85%;
+    width: auto;
+}
+
 .opcion{
     width: 200px;
     height: 100%;
@@ -173,8 +178,21 @@ html{
     transition: all .4s;
 }
 
+.titulo__opcionVen{
+    height: 40%;
+    width: auto;
+    opacity: .6;
+    transition: all .4s;
+}
+
 .titulo__opcion:hover{
     height: 90%;
+    width: auto;
+    opacity: 1;
+}
+
+.titulo__opcionVen:hover{
+    height: 55%;
     width: auto;
     opacity: 1;
 }

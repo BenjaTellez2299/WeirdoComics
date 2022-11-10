@@ -35,7 +35,7 @@
                     <td>400</td>
                     <td>25-05-2022</td>
                     <td>New Era</td>
-                    <td><a href=""><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
+                    <td><a href="{{route('realip')}}"><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
                 </tr>
                 <tr>
                     <td>Nausicaä - Hayao Miyazaki</td>
@@ -44,7 +44,7 @@
                     <td>80</td>
                     <td>15-04-2022</td>
                     <td>Mangas Shipping</td>
-                    <td><a href=""><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
+                    <td><a href="{{route('realip')}}"><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
                 </tr>
                 <tr>
                     <td>Llavero Funko Keychain The Batman</td>
@@ -53,7 +53,7 @@
                     <td>200</td>
                     <td>08-10-2022</td>
                     <td>Funko Store</td>
-                    <td><a href=""><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
+                    <td><a href="{{route('realip')}}"><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
                 </tr>
             </tbody>
         </table>
