@@ -11,7 +11,7 @@
     </div>
 
     <div class="contenedor__forms">
-        <form class="form" action="agregarUsuario" method="post">
+        <form class="form" action="{{route('addUsua')}}" method="post">
         @csrf 
             <div class="form__row">
                 <label class="form__label">Nombre</label>
@@ -46,7 +46,7 @@
            
             <div class="form__foot">
                 <div class="btn__form">
-                    <img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><button class="btn__form-salir">Salir</button>
+                 <a href="{{route('consUsu')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('consUsu')}}" class="btn__form-salir">Salir</a></a>
                 </div>
                 <div class="form__img">
                     <img src="{!! asset('img/usuarios.png') !!}" alt="Comics" class="form__img-pic">
