@@ -1,6 +1,6 @@
 @extends('plantilla')
 
-    @section('titulo','Añadir Comics')
+    @section('titulo','Inventario')
 
     @section('contenido')
 

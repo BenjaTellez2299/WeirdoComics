@@ -67,6 +67,10 @@ class controllerViews extends Controller
         return view('inventario');
     }
 
+    public function ventas(){
+        return view('ventas');
+    }
+    
     public function iniciarSesion(validateLogin $req){
         return redirect('menu')
         ->with('confirm','Datos correctos')
