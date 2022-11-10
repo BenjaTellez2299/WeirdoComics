@@ -3,10 +3,9 @@
     @section('titulo','Consultar Usuario')
 
     @section('contenido')
-     
-
- @if (session()->has('confirm'))
- <?php $usuario = session()->get('usuario')?>
+    
+    @if (session()->has('confirm'))
+    <?php $usuario = session()->get('usuario')?>
     {!!"<script> Swal.fire({
         position: 'top',
         icon: 'success',
@@ -14,10 +13,12 @@
         showConfirmButton: false,
         timer: 3500
       })</script>"!!}
+    @endif
 
- @endif 
-    <div class="titulo__img">
-        <img src="{!! asset('img/consultarUsuario.png') !!}" alt="Consultar Usuario" class="titulo__pic">
+    <div class="titulo">
+        <div class="opcion"><a href="{{route('addUsu')}}" class="opcion__a"><img src="{!! asset('img/addUsuario.png') !!}" alt="Añadir Usuario" class="titulo__opcion"></a></div>
+        <img src="{!! asset('img/consultarUsuario.png') !!}" alt="Consultar Usuarios" class="titulo__principal">
+        <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible">
     </div>
 
     <div class="table__contenedor">
