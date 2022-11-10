@@ -3,7 +3,19 @@
     @section('titulo','Consultar Usuario')
 
     @section('contenido')
+     
 
+ @if (session()->has('confirm'))
+ <?php $usuario = session()->get('usuario')?>
+    {!!"<script> Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'Se ha agregado un nuevo usuario; {$usuario}',
+        showConfirmButton: false,
+        timer: 3500
+      })</script>"!!}
+
+ @endif 
     <div class="titulo__img">
         <img src="{!! asset('img/consultarUsuario.png') !!}" alt="Consultar Usuario" class="titulo__pic">
     </div>
