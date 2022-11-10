@@ -76,6 +76,14 @@ class controllerViews extends Controller
         return view('ventas');
     }
 
+    public function realizarpedido(){
+        return view('realizarpedido');
+    }
+
+    public function reportes(){
+        return view('reportes');
+    }
+
     public function iniciarSesion(validateLogin $req){
         return redirect('menu')
         ->with('confirm','Datos correctos')
@@ -121,6 +129,19 @@ class controllerViews extends Controller
         return redirect('consultarProveedor')
         ->with('confirm','Datos correctos')
         ->with('empresa', $req->txtEmpresa);
+    }
+
+
+
+    public function editProveedor(validateProveedor $req){
+        return redirect('consultarProveedor')
+        ->with('editap','Datos recibidos')
+        ->with('proveedor', $req->txtEmpresa);
+    }
+
+    public function deleteProveedor(){
+        return redirect('consultarProveedor')
+        ->with('eliminap','Datos recibidos');
     }
 
 
