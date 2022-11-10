@@ -23,7 +23,7 @@ class controllerViews extends Controller
         return view('editarComic');
     }
 
-    public function consultComic(){
+    public function consComic(){
         return view('consultarComics');
     }
 
@@ -35,7 +35,7 @@ class controllerViews extends Controller
         return view('editarArticulo');
     }
 
-    public function consultArtic(){
+    public function consArtic(){
         return view('consultarArticulo');
     }
 
@@ -47,7 +47,7 @@ class controllerViews extends Controller
         return view('editarUsuario');
     }
 
-    public function consultUsu(){
+    public function consUsu(){
         return view('consultarUsuario');
     }
 
@@ -59,7 +59,7 @@ class controllerViews extends Controller
         return view('editarProveedor');
     }
 
-    public function consultProve(){
+    public function consProve(){
         return view('consultarProveedor');
     }
 
