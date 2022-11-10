@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controllerViews;
 
 Route::get('/', [controllerViews::class, 'showLogin'])->name('login');
+Route::post('iniciarSesion', [controllerViews::class, 'iniciarSesion'])->name('inicSes');
 
 Route::get('menu', [controllerViews::class, 'showMenu'])->name('menu');
 
