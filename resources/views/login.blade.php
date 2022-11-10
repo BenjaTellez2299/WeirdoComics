@@ -10,12 +10,15 @@
 </head>
 <body>
 
-    <form action="#" class="login animate__animated animate__zoomInUp">
+    <form action="{{route('inicSes')}}" class="login animate__animated animate__zoomInUp" method="POST">
+        @csrf
         <div class="login__pic">
             <img src="{!! asset('img/logow.png') !!}" alt="Logo Weirdo Comics" class="login__img">
         </div>
-        <input type="text" placeholder="Correo" class="login__email">
-        <input type="password" placeholder="Contraseña" class="login__pass">
+        <input type="text" placeholder="Correo" class="login__email" name="txtUser" value="{{old('txtUser')}}">
+        <p class="login__warning">{{ $errors->first('txtUser')}}</p>
+        <input type="password" placeholder="Contraseña" class="login__pass" name="txtPass">
+        <p class="login__warning">{{ $errors->first('txtPass')}}</p>
         <button type="submit" class="login__btn">Iniciar Sesion</button>
     </form>
 
