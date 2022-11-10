@@ -113,6 +113,17 @@ class controllerViews extends Controller
         ->with('articulo', $req->txtTipo);
     }
 
+    public function editArtics(validateArticulo $req){
+        return redirect('consultarArticulo')
+        ->with('edita','Datos recibidos')
+        ->with('articulo', $req->txtTipo);
+    }
+
+    public function deleteArtics(){
+        return redirect('consultarArticulo')
+        ->with('elimina','Datos recibidos');
+    }
+
 
     public function agregar_proveedor(validateProveedor $req){
         return redirect('consultarProveedor')
@@ -138,6 +149,17 @@ class controllerViews extends Controller
         return redirect('consultarUsuario')
         ->with('confirm','Datos correctos')
         ->with('usuario', $req->txtNomb);
+    }
+
+    public function editUse(validateUsuario $req){
+        return redirect('consultarUsuario')
+        ->with('edita','Datos recibidos')
+        ->with('usuario', $req->txtNomb);
+    }
+
+    public function deleteUse(){
+        return redirect('consultarUsuario')
+        ->with('elimina','Datos recibidos');
     }
 
 }

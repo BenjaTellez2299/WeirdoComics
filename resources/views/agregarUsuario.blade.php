@@ -11,7 +11,7 @@
     </div>
 
     <div class="contenedor__forms">
-        <form class="form" action="agregarUsuario" method="post">
+        <form class="form" action="{{route('addUsua')}}" method="post">
         @csrf 
             <div class="form__row">
                 <label class="form__label">Nombre</label>
