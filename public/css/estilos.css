@@ -222,15 +222,10 @@ html{
 }
 
 .form__input{
-    width: 60%;
+    width: 70%;
     font-size: 20px;
     border: 2px solid #000;
     transition: all .3s;
-}
-
-.form__input:focus{
-    width: 70%;
-    border: 2.5px solid #3b0086;
 }
 
 .form__foot{
@@ -413,6 +408,7 @@ html{
 .form__search__img{
     margin: 15px 0;
     width: 50%;
+    vertical-align: middle;
 }
 
 .form__row{
@@ -541,5 +537,8 @@ html{
     padding: 9px;
     background: #000;
     cursor: pointer;
-
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    
 }
