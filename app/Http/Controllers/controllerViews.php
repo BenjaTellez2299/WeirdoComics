@@ -121,6 +121,19 @@ class controllerViews extends Controller
     }
 
 
+
+    public function editProveedor(validateProveedor $req){
+        return redirect('consultarProveedor')
+        ->with('editap','Datos recibidos')
+        ->with('proveedor', $req->txtEmpresa);
+    }
+
+    public function deleteProveedor(){
+        return redirect('consultarProveedor')
+        ->with('eliminap','Datos recibidos');
+    }
+
+
     public function agregar_usuario(validateUsuario $req){
         return redirect('consultarUsuario')
         ->with('confirm','Datos correctos')
