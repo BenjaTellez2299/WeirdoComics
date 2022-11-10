@@ -66,4 +66,8 @@ class controllerViews extends Controller
         return view('inventario');
     }
 
+    public function ventas(){
+        return view('ventas');
+    }
+
 }

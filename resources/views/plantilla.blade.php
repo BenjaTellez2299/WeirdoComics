@@ -18,12 +18,12 @@
         </div>
         <nav>
             <ul class="nav__links">
-                <li class="nav__link"><a href="{{route('consComic')}}">Comics</a></li>
-                <li class="nav__link"><a href="{{route('consArtic')}}">Articulos</a></li>
-                <li class="nav__link"><a href="{{route('consUsu')}}">Usuarios</a></li>
-                <li class="nav__link"><a href="{{route('invent')}}">Inventario</a></li>
-                <li class="nav__link"><a href="{{route('consProve')}}">Proveedores</a></li>
-                <li class="nav__link"><a href="">Ventas</a></li>
+            <li class="nav__link {{request()->routeIs('consComic','addComic', 'editComic')?'nav__link-active':'active'}}"><a href="{{route('consComic')}}">Comics</a></li>
+                <li class="nav__link {{request()->routeIs('consArtic')?'nav__link-active':'active'}}"><a href="{{route('consArtic')}}">Articulos</a></li>
+                <li class="nav__link {{request()->routeIs('consUsu')?'nav__link-active':'active'}}"><a href="{{route('consUsu')}}">Usuarios</a></li>
+                <li class="nav__link {{request()->routeIs('invent')?'nav__link-active':'active'}}"><a href="{{route('invent')}}">Inventario</a></li>
+                <li class="nav__link {{request()->routeIs('consProve')?'nav__link-active':'active'}}"><a href="{{route('consProve')}}">Proveedores</a></li>
+                <li class="nav__link"><a href="{{route('vent')}}">Ventas</a></li>
             </ul>
         </nav>
         <a href=""><button class="nav__btn">Cerrar Sesion</button></a>

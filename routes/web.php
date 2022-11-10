@@ -28,3 +28,5 @@ Route::get('consultarProveedor', [controllerViews::class, 'consProve'])->name('c
 Route::get('editarProveedor', [controllerViews::class, 'editProve'])->name('editProve');
 
 Route::get('inventario', [controllerViews::class, 'inventario'])->name('invent');
+
+Route::get('ventas', [controllerViews::class, 'ventas'])->name('vent');
