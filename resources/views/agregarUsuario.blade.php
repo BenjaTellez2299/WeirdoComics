@@ -4,8 +4,10 @@
 
     @section('contenido')
 
-    <div class="titulo__img">
-        <img src="{!! asset('img/addUsuario.png') !!}" alt="Añadir Usuario" class="titulo__pic">
+    <div class="titulo">
+        <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible">
+        <img src="{!! asset('img/addUsuario.png') !!}" alt="Añadir Usuario" class="titulo__principal">
+        <a href="{{route('consUsu')}}" class="opcion"><img src="{!! asset('img/consultarUsuario.png') !!}" alt="Consultar Usuarios" class="titulo__opcion"></a>
     </div>
 
     <div class="contenedor__forms">

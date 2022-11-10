@@ -24,7 +24,14 @@ class validateComics extends FormRequest
     public function rules()
     {
         return [
-            
+            'txtNombre'=>'max:255|required', 
+            'txtEdicion'=>'numeric|max:99|required',
+            'txtCompany'=>'max:255|required',
+            'txtCantidad'=>'numeric|required',
+            'txtPreCompra'=>'numeric|required',
+            'txtPreVenta'=>'numeric|required',
+            'txtFecha'=>'date|required',
+            'txtProovedor'=>'max:255|required'
         ];
     }
 }

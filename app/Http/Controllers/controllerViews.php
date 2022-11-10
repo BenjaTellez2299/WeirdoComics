@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\validateLogin;
+use App\Http\Requests\validateComics;
 
 class controllerViews extends Controller
 {
@@ -75,6 +76,23 @@ class controllerViews extends Controller
         return redirect('menu')
         ->with('confirm','Datos correctos')
         ->with('user', $req->txtUser);
+    }
+
+    public function agregarComic(validateComics $req){
+        return redirect('consultarComics')
+        ->with('confirm','Datos recibidos')
+        ->with('comic', $req->txtNombre);
+    }
+
+    public function editComics(validateComics $req){
+        return redirect('consultarComics')
+        ->with('edita','Datos recibidos')
+        ->with('comic', $req->txtNombre);
+    }
+
+    public function deleteComics(){
+        return redirect('consultarComics')
+        ->with('elimina','Datos recibidos');
     }
 
 }

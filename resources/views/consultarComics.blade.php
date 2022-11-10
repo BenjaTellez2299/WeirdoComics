@@ -4,6 +4,39 @@
 
     @section('contenido')
 
+    @if (session()->has('confirm'))
+    <?php $comic = session()->get('comic')?>
+      {!!"<script> Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'Se ha agregado un nuevo comic; {$comic}',
+        showConfirmButton: false,
+        timer: 3500
+      })</script>"!!}
+    @endif
+
+    @if (session()->has('edita'))
+    <?php $comic = session()->get('comic')?>
+      {!!"<script> Swal.fire({
+        position: 'top',
+        icon: 'info',
+        title: 'Se ha editado el comic; {$comic}',
+        showConfirmButton: false,
+        timer: 3500
+      })</script>"!!}
+    @endif
+
+    @if (session()->has('elimina'))
+    <?php $comic = session()->get('comic')?>
+      {!!"<script> Swal.fire({
+        position: 'top',
+        icon: 'warning',
+        title: 'Se ha eliminado el comic',
+        showConfirmButton: false,
+        timer: 3500
+      })</script>"!!}
+    @endif
+
     <div class="titulo">
         <div class="opcion"><a href="{{route('addComic')}}" class="opcion__a"><img src="{!! asset('img/addComic.png') !!}" alt="Añadir Comics" class="titulo__opcion"></a></div>
         <img src="{!! asset('img/consultarComic.png') !!}" alt="Consultar Comics" class="titulo__principal">
@@ -35,7 +68,7 @@
                     <td>08-09-2022</td>
                     <td>USA Comics</td>
                     <td><a href="{{route('editComic')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('delComic')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
                 <tr>
                     <td>Spiderman: La última cacería de Kraven</td>
@@ -47,7 +80,7 @@
                     <td>30-07-2022</td>
                     <td>USA Comics</td>
                     <td><a href="{{route('editComic')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('delComic')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
                 <tr>
                     <td>Nausicaä - Hayao Miyazaki</td>
@@ -59,7 +92,7 @@
                     <td>15-04-2022</td>
                     <td>Mangas Shipping</td>
                     <td><a href="{{route('editComic')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('delComic')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
             </tbody>
         </table>
