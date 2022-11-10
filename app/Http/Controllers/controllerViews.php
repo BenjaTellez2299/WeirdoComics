@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\validateLogin;
 
 class controllerViews extends Controller
 {
     public function showLogin(){
         return view('login');
     }
-    
+
     public function showMenu(){
         return view('menu');
     }
@@ -68,6 +69,12 @@ class controllerViews extends Controller
 
     public function ventas(){
         return view('ventas');
+    }
+    
+    public function iniciarSesion(validateLogin $req){
+        return redirect('menu')
+        ->with('confirm','Datos correctos')
+        ->with('user', $req->txtUser);
     }
 
 }

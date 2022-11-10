@@ -96,6 +96,13 @@ body{
 
 .login__btn:hover{
     background: none;
-    border: 3px solid #bcc4c4;;
+    border: 3px solid #3b0086;
 }
 
+.login__warning{
+    color: #fff;
+    text-shadow: #3b0086;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: italic;
+}
