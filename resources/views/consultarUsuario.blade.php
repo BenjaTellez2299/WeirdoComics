@@ -15,6 +15,28 @@
       })</script>"!!}
     @endif
 
+    @if (session()->has('edita'))
+    <?php $usuario = session()->get('usuario')?>
+      {!!"<script> Swal.fire({
+        position: 'top',
+        icon: 'info',
+        title: 'Se ha editado al usuario; {$usuario}',
+        showConfirmButton: false,
+        timer: 3500
+      })</script>"!!}
+    @endif
+
+    @if (session()->has('elimina'))
+    <?php $usuario = session()->get('usuario')?>
+      {!!"<script> Swal.fire({
+        position: 'top',
+        icon: 'warning',
+        title: 'Se ha eliminado al usuario',
+        showConfirmButton: false,
+        timer: 3500
+      })</script>"!!}
+    @endif
+
     <div class="titulo">
         <div class="opcion"><a href="{{route('addUsu')}}" class="opcion__a"><img src="{!! asset('img/addUsuario.png') !!}" alt="Añadir Usuario" class="titulo__opcion"></a></div>
         <img src="{!! asset('img/consultarUsuario.png') !!}" alt="Consultar Usuarios" class="titulo__principal">
@@ -41,8 +63,8 @@
                     <td>Matutino</td>
                     <td>Vendedor</td>
                     <td>25-08-2001</td>
-                    <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('editUsu')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="{{route('delUse')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
                 <tr>
                     <td>Gabriel Galván Niño</td>
@@ -51,8 +73,8 @@
                     <td>Vespertino</td>
                     <td>Encargado</td>
                     <td>23-09-2002</td>
-                    <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('editUsu')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="{{route('delUse')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
                 <tr>
                     <td>Benjamín Enríquez Téllez</td>
@@ -61,8 +83,8 @@
                     <td>Vespertino</td>
                     <td>Administrador</td>
                     <td>29-11-2000</td>
-                    <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('editUsu')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="{{route('delUse')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
             </tbody>
         </table>

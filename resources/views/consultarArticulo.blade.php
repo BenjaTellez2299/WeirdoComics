@@ -5,7 +5,7 @@
     @section('contenido')
 
     @if (session()->has('confirm'))
-      <?php $articulo = session()->get('articulo')?>
+    <?php $articulo = session()->get('articulo')?>
       {!!"<script> Swal.fire({
         position: 'top',
         icon: 'success',
@@ -13,7 +13,29 @@
         showConfirmButton: false,
         timer: 3500
       })</script>"!!}
-    @endif 
+    @endif
+    
+    @if (session()->has('edita'))
+    <?php $articulo = session()->get('articulo')?>
+      {!!"<script> Swal.fire({
+        position: 'top',
+        icon: 'info',
+        title: 'Se ha editado el articulo; {$articulo}',
+        showConfirmButton: false,
+        timer: 3500
+      })</script>"!!}
+    @endif
+
+    @if (session()->has('elimina'))
+    <?php $articulo = session()->get('articulo')?>
+      {!!"<script> Swal.fire({
+        position: 'top',
+        icon: 'warning',
+        title: 'Se ha eliminado el articulo',
+        showConfirmButton: false,
+        timer: 3500
+      })</script>"!!}
+    @endif
 
     <div class="titulo">
         <div class="opcion"><a href="{{route('addArtic')}}" class="opcion__a"><img src="{!! asset('img/addArticulo.png') !!}" alt="Añadir Articulo" class="titulo__opcion"></a></div>
@@ -45,8 +67,8 @@
                     <td>400</td>
                     <td>25-05-2022</td>
                     <td>New Era</td>
-                    <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('editArtics')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="{{route('delArtic')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
                 <tr>
                     <td>Figura de Acción Aquaman</td>
@@ -57,8 +79,8 @@
                     <td>500</td>
                     <td>21-05-2022</td>
                     <td>Juguetron</td>
-                    <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('editArtics')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="{{route('delArtic')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
                 <tr>
                     <td>Llavero Funko Keychain The Batman</td>
@@ -69,8 +91,8 @@
                     <td>200</td>
                     <td>08-10-2022</td>
                     <td>Funko Store</td>
-                    <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('editArtics')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="{{route('delArtic')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
             </tbody>
         </table>

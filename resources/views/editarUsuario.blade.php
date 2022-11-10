@@ -4,36 +4,43 @@
 
     @section('contenido')
 
-    <div class="titulo__img">
-        <img src="{!! asset('img/editUsuario.png') !!}" alt="Editar Usuario" class="titulo__pic">
+    <div class="titulo">
+        <img src="{!! asset('img/editUsuario.png') !!}" alt="Editar Usuario" class="titulo__principal">
     </div>
 
     <div class="contenedor__forms">
-        <form class="form" action="">
-            <div class="form__row">
-                <label class="form__label">Nombre</label>
-                <input type="text" class="form__input">
-            </div>
-            <div class="form__row">
-                <label class="form__label">No.Empleado</label>
-                <input type="text" class="form__input">
-            </div>
-            <div class="form__row">
-                <label class="form__label">Contraseña</label>
-                <input type="text" class="form__input">
-            </div>
-            <div class="form__row">
-                <label class="form__label">Turno</label>
-                <input type="text" class="form__input">
-            </div>
-            <div class="form__row">
-                <label class="form__label">Rol</label>
-                <input type="text" class="form__input">
-            </div>
-            <div class="form__row">
-                <label class="form__label">Fecha de Nacimiento</label>
-                <input type="text" class="form__input">
-            </div>
+        <form class="form" action="{{route('editUse')}}" method="post">
+            @csrf 
+                <div class="form__row">
+                    <label class="form__label">Nombre</label>
+                    <input type="text" class="form__input" name="txtNomb"  value="{{old('txtNomb')}}">
+                </div>
+                <p class="form__warning">{{ $errors->first('txtNomb')}}</p>
+                <div class="form__row">
+                    <label class="form__label">No.Empleado</label>
+                    <input type="text" class="form__input" name="txtNoEmpleado"  value="{{old('txtNoEmpleado')}}">
+                </div>
+                <p class="form__warning">{{ $errors->first('txtNoEmpleado')}}</p>
+                <div class="form__row">
+                    <label class="form__label">Contraseña</label>
+                    <input type="password" class="form__input" name="txtContra"  value="{{old('txtContra')}}">
+                </div>
+                <p class="form__warning">{{ $errors->first('txtContra')}}</p>
+                <div class="form__row">
+                    <label class="form__label">Turno</label>
+                    <input type="text" class="form__input" name="txtTurno"  value="{{old('txtTurno')}}">
+                </div>
+                <p class="form__warning">{{ $errors->first('txtTurno')}}</p>
+                <div class="form__row">
+                    <label class="form__label">Rol</label>
+                    <input type="text" class="form__input" name="txtRol"  value="{{old('txtRol')}}">
+                </div>
+                <p class="form__warning">{{ $errors->first('txtRol')}}</p>
+                <div class="form__row">
+                    <label class="form__label">Fecha de Nacimiento</label>
+                    <input type="date" class="form__input" name="txtFechaNaci"  value="{{old('txtFechaNaci')}}">
+                </div>
+                <p class="form__warning">{{ $errors->first('txtFechaNaci')}}</p>
            
             <div class="form__foot">
                 <div class="btn__form">
