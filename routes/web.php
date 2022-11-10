@@ -38,4 +38,6 @@ Route::get('ventas', [controllerViews::class, 'ventas'])->name('vent');
 
 Route::get('realizarpedido', [controllerViews::class, 'realizarpedido'])->name('vent');
 
+Route::get('reportes', [controllerViews::class, 'reportes'])->name('report');
+
 Route::post('agregarProveedor', [controllerViews::class, 'agregar_proveedor'])->name('addPro');
