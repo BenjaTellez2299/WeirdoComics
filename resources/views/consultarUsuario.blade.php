@@ -4,6 +4,10 @@
 
     @section('contenido')
      
+<div class="titulo">
+        <div class="opcion"><a href="{{route('addUsu')}}" class="opcion__a"><img src="{!! asset('img/addUsuario.png') !!}" alt="Añadir Usuario" class="titulo__opcion"></a></div>
+        <img src="{!! asset('img/consultarUsuario.png') !!}" alt="Consultar Usuarios" class="titulo__principal">
+        <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible">
 
  @if (session()->has('confirm'))
  <?php $usuario = session()->get('usuario')?>
@@ -14,7 +18,6 @@
         showConfirmButton: false,
         timer: 3500
       })</script>"!!}
-
  @endif 
     <div class="titulo__img">
         <img src="{!! asset('img/consultarUsuario.png') !!}" alt="Consultar Usuario" class="titulo__pic">

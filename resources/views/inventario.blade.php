@@ -4,8 +4,8 @@
 
     @section('contenido')
 
-    <div class="titulo__img">
-        <img src="{!! asset('img/inventarios.png') !!}" alt="Inventario" class="titulo__pic">
+    <div class="titulo">
+        <img src="{!! asset('img/inventarios.png') !!}" alt="Consultar Usuarios" class="titulo__principal">
     </div>
 
     <div class="contenedor__buscar">

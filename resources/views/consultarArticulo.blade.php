@@ -4,9 +4,14 @@
 
     @section('contenido')
 
+
+    <div class="titulo">
+        <div class="opcion"><a href="{{route('addArtic')}}" class="opcion__a"><img src="{!! asset('img/addArticulo.png') !!}" alt="Añadir Articulo" class="titulo__opcion"></a></div>
+        <img src="{!! asset('img/consultarArticulo.png') !!}" alt="Consultar Articulo" class="titulo__principal">
+        <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible">
+    
     @if (session()->has('confirm'))
       <?php $articulo = session()->get('articulo')?>
-
       {!!"<script> Swal.fire({
         position: 'top',
         icon: 'success',
@@ -14,7 +19,6 @@
         showConfirmButton: false,
         timer: 3500
       })</script>"!!}
-
     @endif 
 
     <div class="titulo__img">
