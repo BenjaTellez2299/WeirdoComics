@@ -15,6 +15,30 @@
       })</script>"!!}
     @endif
 
+
+
+    @if (session()->has('editap'))
+    <?php $proveedor = session()->get('proveedor')?>
+      {!!"<script> Swal.fire({
+        position: 'top',
+        icon: 'info',
+        title: 'Se ha editado el proveedor; {$proveedor}',
+        showConfirmButton: false,
+        timer: 3500
+      })</script>"!!}
+    @endif
+
+    @if (session()->has('eliminap'))
+    <?php $proveedor = session()->get('proveedor')?>
+      {!!"<script> Swal.fire({
+        position: 'top',
+        icon: 'warning',
+        title: 'Se ha eliminado el proveedor',
+        showConfirmButton: false,
+        timer: 3500
+      })</script>"!!}
+    @endif
+
     <div class="titulo">
         <div class="opcion"><a href="{{route('addProve')}}" class="opcion__a"><img src="{!! asset('img/addProve.png') !!}" alt="Añadir Proveedor" class="titulo__opcion"></a></div>
         <img src="{!! asset('img/consultarProve.png') !!}" alt="Consultar Proveedor" class="titulo__principal">
@@ -45,8 +69,8 @@
                     <td>442-693-2148</td>
                     <td>juanito@juguetron.com</td>
                     <td><a href=""><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('editProvee')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="{{route('delProvee')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
                 <tr>
                     <td>Funko Store</td>
@@ -57,8 +81,8 @@
                     <td>442-693-8752</td>
                     <td>jorg@funkit.com</td>
                     <td><a href=""><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('editProvee')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="{{route('delProvee')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
                 <tr>
                     <td>Mangas Shipping</td>
@@ -69,8 +93,8 @@
                     <td>55-692-60542</td>
                     <td>onichan@manguito.com</td>
                     <td><a href=""><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('editProvee')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="{{route('delProvee')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
             </tbody>
         </table>

@@ -39,3 +39,5 @@ Route::get('ventas', [controllerViews::class, 'ventas'])->name('vent');
 Route::get('realizarpedido', [controllerViews::class, 'realizarpedido'])->name('vent');
 
 Route::post('agregarProveedor', [controllerViews::class, 'agregar_proveedor'])->name('addPro');
+Route::post('editarProveedor', [controllerViews::class, 'editProveedor'])->name('editProvee');
+Route::get('borrarProveedor', [controllerViews::class, 'deleteProveedor'])->name('delProvee');
