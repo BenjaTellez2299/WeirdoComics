@@ -41,3 +41,7 @@ Route::get('realizarpedido', [controllerViews::class, 'realizarpedido'])->name('
 Route::post('agregarProveedor', [controllerViews::class, 'agregar_proveedor'])->name('addPro');
 Route::post('editarProveedor', [controllerViews::class, 'editProveedor'])->name('editProvee');
 Route::get('borrarProveedor', [controllerViews::class, 'deleteProveedor'])->name('delProvee');
+Route::get('reportes', [controllerViews::class, 'reportes'])->name('report');
+
+Route::post('agregarProveedor', [controllerViews::class, 'agregar_proveedor'])->name('addPro');
+

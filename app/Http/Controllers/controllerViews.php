@@ -80,6 +80,10 @@ class controllerViews extends Controller
         return view('realizarpedido');
     }
 
+    public function reportes(){
+        return view('reportes');
+    }
+
     public function iniciarSesion(validateLogin $req){
         return redirect('menu')
         ->with('confirm','Datos correctos')
