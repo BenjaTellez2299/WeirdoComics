@@ -8,8 +8,6 @@
         <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible">
         <img src="{!! asset('img/addProve.png') !!}" alt="Añadir Proveedor" class="titulo__principal">
         <a href="{{route('consProve')}}" class="opcion"><img src="{!! asset('img/consultarProve.png') !!}" alt="Consultar Proovedores" class="titulo__opcion"></a>
-    <div class="titulo__img">
-        <img src="{!! asset('img/addProve.png') !!}" alt="Añadir Proveedor" class="titulo__pic">
     </div>
 
     <div class="contenedor__forms">

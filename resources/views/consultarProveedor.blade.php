@@ -4,11 +4,6 @@
 
     @section('contenido')
 
-    <div class="titulo">
-        <div class="opcion"><a href="{{route('addProve')}}" class="opcion__a"><img src="{!! asset('img/addProve.png') !!}" alt="Añadir Proveedor" class="titulo__opcion"></a></div>
-        <img src="{!! asset('img/consultarProve.png') !!}" alt="Consultar Proveedor" class="titulo__principal">
-        <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible">
-
     @if (session()->has('confirm'))
       <?php $empresa = session()->get('empresa')?>
       {!!"<script> Swal.fire({
@@ -18,10 +13,12 @@
         showConfirmButton: false,
         timer: 3500
       })</script>"!!}
-    @endif 
+    @endif
 
-    <div class="titulo__img">
-        <img src="{!! asset('img/consultarProve.png') !!}" alt="Consultar Proveedor" class="titulo__pic">
+    <div class="titulo">
+        <div class="opcion"><a href="{{route('addProve')}}" class="opcion__a"><img src="{!! asset('img/addProve.png') !!}" alt="Añadir Proveedor" class="titulo__opcion"></a></div>
+        <img src="{!! asset('img/consultarProve.png') !!}" alt="Consultar Proveedor" class="titulo__principal">
+        <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible"> 
     </div>
 
     <div class="table__contenedor">
