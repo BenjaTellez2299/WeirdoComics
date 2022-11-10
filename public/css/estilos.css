@@ -389,3 +389,11 @@ html{
 }
 
 
+.form__warning{
+    color: #ffd400;
+    text-shadow: #3b0086;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: italic;
+    text-align: center;
+}
