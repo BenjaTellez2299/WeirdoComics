@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\validateLogin;
+use App\Http\Requests\validateComics;
+use App\Http\Requests\validateArticulo;
+use App\Http\Requests\validateProveedor;
+use App\Http\Requests\validateUsuario;
 
 class controllerViews extends Controller
 {
@@ -38,6 +42,7 @@ class controllerViews extends Controller
     public function consArtic(){
         return view('consultarArticulo');
     }
+   
 
     public function addUsu(){
         return view('agregarUsuario');
@@ -75,6 +80,43 @@ class controllerViews extends Controller
         return redirect('menu')
         ->with('confirm','Datos correctos')
         ->with('user', $req->txtUser);
+    }
+
+    public function agregarComic(validateComics $req){
+        return redirect('consultarComics')
+        ->with('confirm','Datos recibidos')
+        ->with('comic', $req->txtNombre);
+    }
+
+    public function editComics(validateComics $req){
+        return redirect('consultarComics')
+        ->with('edita','Datos recibidos')
+        ->with('comic', $req->txtNombre);
+    }
+
+    public function deleteComics(){
+        return redirect('consultarComics')
+        ->with('elimina','Datos recibidos');
+    }
+
+    public function agregar_articulos(validateArticulo $req){
+        return redirect('consultarArticulo')
+        ->with('confirm','Datos correctos')
+        ->with('articulo', $req->txtTipo);
+    }
+
+
+    public function agregar_proveedor(validateProveedor $req){
+        return redirect('consultarProveedor')
+        ->with('confirm','Datos correctos')
+        ->with('empresa', $req->txtEmpresa);
+    }
+
+
+    public function agregar_usuario(validateUsuario $req){
+        return redirect('consultarUsuario')
+        ->with('confirm','Datos correctos')
+        ->with('usuario', $req->txtNomb);
     }
 
 }

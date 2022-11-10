@@ -27,7 +27,7 @@
                 <li class="nav__link"><a href="{{route('vent')}}">Ventas</a></li>
             </ul>
         </nav>
-        <a href=""><button class="nav__btn">Cerrar Sesion</button></a>
+        <a href="{{route('login')}}" class="nav__btn">Cerrar Sesion</a>
     </header>
     
     {{--  Cotenido  --}}
