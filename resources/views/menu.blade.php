@@ -4,6 +4,17 @@
 
     @section('contenido')
 
+    @if (session()->has('confirm'))
+    <?php $user = session()->get('user')?>
+      {!!"<script> Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'Bienvenido {$user}',
+        showConfirmButton: false,
+        timer: 3500
+      })</script>"!!}
+    @endif
+
     <h1 class="menu__titulo">¿Quienes somos?</h1>
     
     <section class="menu__contenedor-img">

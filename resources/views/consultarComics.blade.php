@@ -4,8 +4,10 @@
 
     @section('contenido')
 
-    <div class="titulo__img">
-        <img src="{!! asset('img/consultarComic.png') !!}" alt="Consultar Comic" class="titulo__pic">
+    <div class="titulo">
+        <div class="opcion"><a href="{{route('addComic')}}" class="opcion__a"><img src="{!! asset('img/addComic.png') !!}" alt="Añadir Comics" class="titulo__opcion"></a></div>
+        <img src="{!! asset('img/consultarComic.png') !!}" alt="Consultar Comics" class="titulo__principal">
+        <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible">
     </div>
 
     <div class="table__contenedor">
@@ -32,7 +34,7 @@
                     <td>100</td>
                     <td>08-09-2022</td>
                     <td>USA Comics</td>
-                    <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="{{route('editComic')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
                     <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
                 <tr>
@@ -44,7 +46,7 @@
                     <td>95</td>
                     <td>30-07-2022</td>
                     <td>USA Comics</td>
-                    <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="{{route('editComic')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
                     <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
                 <tr>
@@ -56,7 +58,7 @@
                     <td>80</td>
                     <td>15-04-2022</td>
                     <td>Mangas Shipping</td>
-                    <td><a href=""><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="{{route('editComic')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
                     <td><a href=""><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
             </tbody>

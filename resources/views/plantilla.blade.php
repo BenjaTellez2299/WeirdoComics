@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>@yield('titulo')</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
         </div>
         <nav>
             <ul class="nav__links">
-            <li class="nav__link {{request()->routeIs('consComic','addComic', 'editComic')?'nav__link-active':'active'}}"><a href="{{route('consComic')}}">Comics</a></li>
+                <li class="nav__link {{request()->routeIs('consComic','addComic', 'editComic')?'nav__link-active':'active'}}"><a href="{{route('consComic')}}">Comics</a></li>
                 <li class="nav__link {{request()->routeIs('consArtic')?'nav__link-active':'active'}}"><a href="{{route('consArtic')}}">Articulos</a></li>
                 <li class="nav__link {{request()->routeIs('consUsu')?'nav__link-active':'active'}}"><a href="{{route('consUsu')}}">Usuarios</a></li>
                 <li class="nav__link {{request()->routeIs('invent')?'nav__link-active':'active'}}"><a href="{{route('invent')}}">Inventario</a></li>
