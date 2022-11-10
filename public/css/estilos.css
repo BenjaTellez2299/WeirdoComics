@@ -389,4 +389,146 @@ html{
     scale: 1.2;
 }
 
+.contenedor__search{
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+}
 
+.form__search{
+    margin: 15px 0;
+    width: 50%;
+}
+
+.form__search__img{
+    margin: 15px 0;
+    width: 50%;
+}
+
+.form__row{
+    width: 100%;
+    display: block;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor__ventas{
+    width: 100%;
+    display: flex;
+}
+
+.contenedor__ventas__left{
+    width: 50%;
+    display: flex;
+    justify-content: left;
+}
+
+.contenedor__ventas__right{
+    width: 50%;
+    display: flex;
+
+    justify-content: center;
+}
+
+.table__ventas{
+    margin: 50px auto;
+    width: 700px;
+}
+
+.table__ventas__prod{
+    background-color: #fff;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;  
+}
+
+.table__ventas__prod th, td{
+    padding: 15px;
+}
+
+.table__ventas__prod thead{
+    background-color: #a5a2ad;
+    border-bottom: 5px solid #000;
+    font-weight: 600;
+    color: #000;
+}
+
+.table__ventas__prod tr:nth-child(even){
+    background-color: #cacbc9;
+}
+
+.form__warning{
+    color: #ffd400;
+    text-shadow: #3b0086;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: italic;
+    text-align: center;
+}
+
+.table__ventas__prod tr:hover td{
+    background-color: #7f7c92;
+    color: #fff;
+}
+
+.table__ventas__ventas{
+    background-color: #fff;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;  
+}
+
+.table__ventas__ventas th, td{
+    padding: 15px;
+}
+
+.table__ventas__ventas thead{
+    background-color: #a5a2ad;
+    border-bottom: 5px solid #000;
+    font-weight: 600;
+    color: #000;
+}
+
+.table__ventas__ventas tr:nth-child(even){
+    background-color: #cacbc9;
+}
+
+.table__ventas__ventas tr:hover td{
+    background-color: #7f7c92;
+    color: #fff;
+}
+
+.ventas__img{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.btn__vender{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn__vender-img{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.btn__vender-compra{
+    border: 0;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 800;
+    color: #fff;
+    padding: 9px;
+    background: #000;
+    cursor: pointer;
+}

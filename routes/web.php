@@ -20,12 +20,13 @@ Route::get('borrarComic', [controllerViews::class, 'deleteComics'])->name('delCo
 Route::get('agregarArticulo', [controllerViews::class, 'addArtic'])->name('addArtic');
 Route::get('consultarArticulo', [controllerViews::class, 'consArtic'])->name('consArtic');
 Route::get('editarArticulo', [controllerViews::class, 'editArtic'])->name('editArtic');
+Route::post('agregarArticulo', [controllerViews::class, 'agregar_articulos'])->name('addArti');
 
 //USUARIO
 Route::get('agregarUsuario', [controllerViews::class, 'addUsu'])->name('addUsu');
 Route::get('consultarUsuario', [controllerViews::class, 'consUsu'])->name('consUsu');
 Route::get('editarUsuario', [controllerViews::class, 'editUsu'])->name('editUsu');
-
+Route::post('agregarUsuario', [controllerViews::class, 'agregar_usuario'])->name('addUsua');
 //PROVEEDOR
 Route::get('agregarProveedor', [controllerViews::class, 'addProve'])->name('addProve');
 Route::get('consultarProveedor', [controllerViews::class, 'consProve'])->name('consProve');
@@ -34,3 +35,4 @@ Route::get('editarProveedor', [controllerViews::class, 'editProve'])->name('edit
 Route::get('inventario', [controllerViews::class, 'inventario'])->name('invent');
 
 Route::get('ventas', [controllerViews::class, 'ventas'])->name('vent');
+Route::post('agregarProveedor', [controllerViews::class, 'agregar_proveedor'])->name('addPro');
