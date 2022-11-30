@@ -151,6 +151,11 @@ html{
     width: auto;
 }
 
+.titulo__principalVen{
+    height: 85%;
+    width: auto;
+}
+
 .opcion{
     width: 200px;
     height: 100%;
@@ -173,8 +178,21 @@ html{
     transition: all .4s;
 }
 
+.titulo__opcionVen{
+    height: 40%;
+    width: auto;
+    opacity: .6;
+    transition: all .4s;
+}
+
 .titulo__opcion:hover{
     height: 90%;
+    width: auto;
+    opacity: 1;
+}
+
+.titulo__opcionVen:hover{
+    height: 55%;
     width: auto;
     opacity: 1;
 }
@@ -388,6 +406,8 @@ html{
     width: 100%;
     margin: 10px 0;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 
@@ -515,30 +535,42 @@ html{
 }
 
 .btn__vender{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    
+}
+
+.btn__vender a{
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn__vender-img{
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    margin: 10px 0;
+    margin: 10px 65px;
+    width: 50%;
 }
 
 .btn__vender-compra{
+    display: block;
     border: 0;
     width: 100%;
     font-size: 15px;
-    font-weight: 800;
-    color: #fff;
-    padding: 9px;
-    background: #000;
-    cursor: pointer;
-    font-size: 20px;
-    line-height: 50px;
+    font-weight: 700;
+    color: #000;
+    padding: 9px 25px;
+    background: none;
+    text-decoration: none;
     text-align: center;
-    
+    border: 3px solid #000;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+.btn__vender-compra:hover{
+    color: #fff;
+    background-color: #000;
+    scale: 1.2;
+}
+
+
+

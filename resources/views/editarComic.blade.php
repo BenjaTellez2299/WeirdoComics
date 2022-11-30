@@ -47,7 +47,7 @@
             </div>
             <p class="form__warning">{{ $errors->first('txtFecha')}}</p>
             <div class="form__row">
-                <label class="form__label">Proovedor</label>
+                <label class="form__label">Proveedor</label>
                 <input type="text" class="form__input" name="txtProovedor" value="{{old('txtProovedor')}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtProovedor')}}</p>

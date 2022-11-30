@@ -4,8 +4,21 @@
 
     @section('contenido')
 
+    @if (session()->has('venta'))
+    <?php $venta = session()->get('venta')?>
+      {!!"<script> Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'Venta registrada con exito; {$venta}',
+        showConfirmButton: false,
+        timer: 3500
+      })</script>"!!}
+    @endif
+
     <div class="titulo">
-        <img src="{!! asset('img/ventas.png') !!}" alt="Inventario" class="titulo__principal">
+        <div class="opcion"><a href="{{route('report')}}" class="opcion__a"><img src="{!! asset('img/reporte.png') !!}" alt="Reporte Ventas" class="titulo__opcionVen"></a></div>
+        <img src="{!! asset('img/ventas.png') !!}" alt="Inventario" class="titulo__principalVen">
+        <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible"> 
     </div>
 
     <div class="contenedor__search">
@@ -91,7 +104,7 @@
 
         <div class="contenedor__ventas__right">
             <div class="btn__vender">
-                <a href=""><img src="{!! asset('img/exportar.png') !!}" class="btn__vender-img"><button type="submit" class="btn__vender-compra">COMPRAR</button></a>
+                <a><img src="{!! asset('img/exportar.png') !!}" class="btn__vender-img"><a href="{{route('venta')}}" class="btn__vender-compra">Comprar</a></a>
             </div>
         </div>
     </div>

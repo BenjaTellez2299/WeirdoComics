@@ -15,8 +15,6 @@
       })</script>"!!}
     @endif
 
-
-
     @if (session()->has('editap'))
     <?php $proveedor = session()->get('proveedor')?>
       {!!"<script> Swal.fire({
@@ -68,7 +66,7 @@
                     <td>596-1248 ext.25</td>
                     <td>442-693-2148</td>
                     <td>juanito@juguetron.com</td>
-                    <td><a href=""><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
+                    <td><a href="{{route('realip')}}"><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
                     <td><a href="{{route('editProvee')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
                     <td><a href="{{route('delProvee')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
@@ -80,7 +78,7 @@
                     <td>015-2656 ext.5</td>
                     <td>442-693-8752</td>
                     <td>jorg@funkit.com</td>
-                    <td><a href=""><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
+                    <td><a href="{{route('realip')}}"><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
                     <td><a href="{{route('editProvee')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
                     <td><a href="{{route('delProvee')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
@@ -92,7 +90,7 @@
                     <td>000-0069 ext.0</td>
                     <td>55-692-60542</td>
                     <td>onichan@manguito.com</td>
-                    <td><a href=""><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
+                    <td><a href="{{route('realip')}}"><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
                     <td><a href="{{route('editProvee')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
                     <td><a href="{{route('delProvee')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>

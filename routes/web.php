@@ -37,19 +37,14 @@ Route::get('agregarProveedor', [controllerViews::class, 'addProve'])->name('addP
 Route::get('consultarProveedor', [controllerViews::class, 'consProve'])->name('consProve');
 Route::get('editarProveedor', [controllerViews::class, 'editProve'])->name('editProve');
 Route::post('agregarProveedor', [controllerViews::class, 'agregar_proveedor'])->name('addPro');
+Route::post('editarProveedor', [controllerViews::class, 'editProveedor'])->name('editProvee');
+Route::get('borrarProveedor', [controllerViews::class, 'deleteProveedor'])->name('delProvee');
 
 //Inventarios
 Route::get('inventario', [controllerViews::class, 'inventario'])->name('invent');
+Route::get('realizarpedido', [controllerViews::class, 'realizarpedido'])->name('realip');
 
 //Ventas
 Route::get('ventas', [controllerViews::class, 'ventas'])->name('vent');
-
-Route::get('realizarpedido', [controllerViews::class, 'realizarpedido'])->name('vent');
-
-Route::post('agregarProveedor', [controllerViews::class, 'agregar_proveedor'])->name('addPro');
-Route::post('editarProveedor', [controllerViews::class, 'editProveedor'])->name('editProvee');
-Route::get('borrarProveedor', [controllerViews::class, 'deleteProveedor'])->name('delProvee');
 Route::get('reportes', [controllerViews::class, 'reportes'])->name('report');
-
-Route::post('agregarProveedor', [controllerViews::class, 'agregar_proveedor'])->name('addPro');
-
+Route::get('ventaRealizada', [controllerViews::class, 'ventaRealizada'])->name('venta');
