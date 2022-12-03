@@ -65,12 +65,45 @@
                     <td>{{$consulta->rol}}</td>
                     <td>{{$consulta->fehcaNac}}</td>
                     <td><a href="{{route('usuario.edit', $consulta->idUsuario)}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href="{{route('delUse')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a class="eliminar-usuario"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
               @endforeach
             </tbody>
         </table>
     </div>
-    
 
     @endsection
+
+
+@section('contenido')
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    
+    $('#eliminar-usuario').submit(function(e){
+        e.preventDefault();
+
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )
+          }
+        })
+
+    });
+    </script>
+
+
+@endsection

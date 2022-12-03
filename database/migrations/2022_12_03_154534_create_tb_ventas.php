@@ -20,7 +20,7 @@ return new class extends Migration
             $table->double('total');
             $table->timestamps();
 
-            $table->foreign('idusuario')->references('idUsuario')->on('tb_usuarios')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('usuario_id')->references('idUsuario')->on('tb_usuarios')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

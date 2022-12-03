@@ -28,11 +28,17 @@
                 <input type="password" class="form__input" name="txtContra"  value="{{old('txtContra')}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtContra')}}</p>
+            
             <div class="form__row">
                 <label class="form__label">Turno</label>
-                <input type="text" class="form__input" name="txtTurno"  value="{{old('txtTurno')}}">
+                <select class="form__input"  name="txtTurno"  value="{{old('txtTurno')}}">
+                    <option selected>Selecciona una opción...</option>
+                    <option value="Matutino">Matutino</option>
+                    <option value="Vespertino">Vespertino</option>
+                </select>
             </div>
             <p class="form__warning">{{ $errors->first('txtTurno')}}</p>
+            
             <div class="form__row">
                 <label class="form__label">Rol</label>
                 <input type="text" class="form__input" name="txtRol"  value="{{old('txtRol')}}">
