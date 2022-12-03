@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controllerViews;
+use App\Http\Controllers\controladorComics;
 
 Route::get('/', [controllerViews::class, 'showLogin'])->name('login');
 Route::post('iniciarSesion', [controllerViews::class, 'iniciarSesion'])->name('inicSes');
@@ -50,6 +51,5 @@ Route::get('reportes', [controllerViews::class, 'reportes'])->name('report');
 Route::get('ventaRealizada', [controllerViews::class, 'ventaRealizada'])->name('venta');
 
 Route::get('realizarpedido', [controllerViews::class, 'realizarpedido'])->name('realip');
-
 
 Route::get('reportes', [controllerViews::class, 'reportes'])->name('report');
