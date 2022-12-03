@@ -53,13 +53,13 @@
                 <p class="form__warning">{{ $errors->first('txtProveedor')}}</p>
             <div class="form__foot">
                 <div class="btn__form">
-                    <a href=""><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><button class="btn__form-salir">Salir</button></a>
+                    <a href="{{route('consArtic')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('consArtic')}}" class="btn__form-salir">Salir</a></a>
                 </div>
                 <div class="form__img">
                     <img src="{!! asset('img/articulos.png') !!}" alt="Comics" class="form__img-pic">
                 </div>
                 <div class="btn__form">
-                    <a href=""><img src="{!! asset('img/editar.png') !!}" alt="Editar" class="btn__form-img"><button type="submit" class="btn__form-editar">Editar</button></a>
+                    <img src="{!! asset('img/editar.png') !!}" alt="Editar" class="btn__form-img"><button type="submit" class="btn__form-editar">Editar</button>
                 </div>
             </div>
         </form>

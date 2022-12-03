@@ -162,4 +162,9 @@ class controllerViews extends Controller
         ->with('elimina','Datos recibidos');
     }
 
+    public function ventaRealizada(){
+        return redirect('ventas')
+        ->with('venta','Datos recibidos');
+    }
+
 }
