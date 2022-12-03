@@ -48,3 +48,8 @@ Route::get('realizarpedido', [controllerViews::class, 'realizarpedido'])->name('
 Route::get('ventas', [controllerViews::class, 'ventas'])->name('vent');
 Route::get('reportes', [controllerViews::class, 'reportes'])->name('report');
 Route::get('ventaRealizada', [controllerViews::class, 'ventaRealizada'])->name('venta');
+
+Route::get('realizarpedido', [controllerViews::class, 'realizarpedido'])->name('realip');
+
+
+Route::get('reportes', [controllerViews::class, 'reportes'])->name('report');
