@@ -13,8 +13,8 @@ return new class extends Migration
             //PK
             $table->id('idProducto');
             //FK
-            $table->unsignedBigInteger('idproveedor');
-            $table->unsignedBigInteger('idventa');
+            $table->unsignedBigInteger('proveedor_id');
+            $table->unsignedBigInteger('venta_id');
             //DATOS
             $table->string('nombre');
             $table->integer('cantidad');
