@@ -22,8 +22,8 @@ return new class extends Migration
             $table->double('precioVenta');
             $table->timestamps();
 
-            $table->foreign('idproveedor')->references('idProveedor')->on('tb_proveedores')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('idventa')->references('idVenta')->on('tb_ventas')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('proveedor_id')->references('idProveedor')->on('tb_proveedores')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('venta_id')->references('idVenta')->on('tb_ventas')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
