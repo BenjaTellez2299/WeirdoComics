@@ -8,16 +8,17 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('tb_comics', function (Blueprint $table) {
+        Schema::create('tb_productos', function (Blueprint $table) {
             
             //PK
-            $table->id('idComic');
+            $table->id('idProducto');
             //FK
-            $table->unsignedBigInteger('idproveedor');
+            $table->unsignedBigInteger('proveedor_id');
             //DATOS
-            $table->string('nombre');
-            $table->integer('edicion');
-            $table->string('compania');
+            $table->string('nombre_tipo');
+            $table->string('edicion_marca');
+            $table->string('company_descripcion');
+            $table->integer('categoria');
             $table->integer('cantidad');
             $table->double('precioCompra');
             $table->double('precioVenta');
@@ -30,6 +31,6 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('tb_comics');
+        Schema::dropIfExists('tb_articulos');
     }
 };

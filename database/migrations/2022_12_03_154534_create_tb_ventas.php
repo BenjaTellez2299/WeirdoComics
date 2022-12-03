@@ -13,7 +13,7 @@ return new class extends Migration
             //PK
             $table->id('idVenta');
             //FK
-            $table->unsignedBigInteger('idusuario');
+            $table->unsignedBigInteger('usuario_id');
             //DATOS
             $table->date('fecha');
             $table->integer('noProductos');
