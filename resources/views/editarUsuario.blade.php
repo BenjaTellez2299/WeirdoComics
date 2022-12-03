@@ -9,42 +9,45 @@
     </div>
 
     <div class="contenedor__forms">
-        <form class="form" action="{{route('editUse')}}" method="post">
+        <form class="form" action="{{route('usuario.update', $consultaIdUsu->idUsuario)}}" method="post">
             @csrf 
+
+            {!!method_field('PUT')!!}
+
                 <div class="form__row">
                     <label class="form__label">Nombre</label>
-                    <input type="text" class="form__input" name="txtNomb"  value="{{old('txtNomb')}}">
+                    <input type="text" class="form__input" name="txtNomb"  value="{{$consultaIdUsu->nombre}}">
                 </div>
                 <p class="form__warning">{{ $errors->first('txtNomb')}}</p>
                 <div class="form__row">
                     <label class="form__label">No.Empleado</label>
-                    <input type="text" class="form__input" name="txtNoEmpleado"  value="{{old('txtNoEmpleado')}}">
+                    <input type="text" class="form__input" name="txtNoEmpleado"  value="{{$consultaIdUsu->noEmpleado}}">
                 </div>
                 <p class="form__warning">{{ $errors->first('txtNoEmpleado')}}</p>
                 <div class="form__row">
                     <label class="form__label">Contraseña</label>
-                    <input type="password" class="form__input" name="txtContra"  value="{{old('txtContra')}}">
+                    <input type="password" class="form__input" name="txtContra"  value="{{$consultaIdUsu->contra}}">
                 </div>
                 <p class="form__warning">{{ $errors->first('txtContra')}}</p>
                 <div class="form__row">
                     <label class="form__label">Turno</label>
-                    <input type="text" class="form__input" name="txtTurno"  value="{{old('txtTurno')}}">
+                    <input type="text" class="form__input" name="txtTurno"  value="{{$consultaIdUsu->turno}}">
                 </div>
                 <p class="form__warning">{{ $errors->first('txtTurno')}}</p>
                 <div class="form__row">
                     <label class="form__label">Rol</label>
-                    <input type="text" class="form__input" name="txtRol"  value="{{old('txtRol')}}">
+                    <input type="text" class="form__input" name="txtRol"  value="{{$consultaIdUsu->rol}}">
                 </div>
                 <p class="form__warning">{{ $errors->first('txtRol')}}</p>
                 <div class="form__row">
                     <label class="form__label">Fecha de Nacimiento</label>
-                    <input type="date" class="form__input" name="txtFechaNaci"  value="{{old('txtFechaNaci')}}">
+                    <input type="date" class="form__input" name="txtFechaNaci"  value="{{$consultaIdUsu->fehcaNac}}">
                 </div>
                 <p class="form__warning">{{ $errors->first('txtFechaNaci')}}</p>
            
             <div class="form__foot">
                 <div class="btn__form">
-                    <a href="{{route('consUsu')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('consUsu')}}" class="btn__form-salir">Salir</a></a>
+                    <a href="{{route('usuario.index')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('usuario.index')}}" class="btn__form-salir">Salir</a></a>
                 </div>
                 <div class="form__img">
                     <img src="{!! asset('img/usuarios.png') !!}" alt="Comics" class="form__img-pic">
