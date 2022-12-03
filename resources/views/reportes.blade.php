@@ -9,11 +9,6 @@
         <img src="{!! asset('img/reporte.png') !!}" alt="Inventario" class="titulo__principalVen">
 
         <div class="opcion"><a href="{{route('vent')}}" class="opcion__a"><img src="{!! asset('img/ventas.png') !!}" alt="Reporte Ventas" class="titulo__opcionVen"></a></div>
-
-        <div class="opcion"><a href="{{route('report')}}" class="opcion__a"><img src="{!! asset('img/ventas.png') !!}" alt="Reporte Ventas" class="titulo__opcionVen"></a></div>
-        <img src="{!! asset('img/ventas.png') !!}" alt="Inventario" class="titulo__principalVen">
-        <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible"> 
-
     </div>
 
     <div class="contenedor__search">
