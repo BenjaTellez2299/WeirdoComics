@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controllerViews;
 use App\Http\Controllers\controladorComics;
+use App\Http\Controllers\controladorUsuarios;
 
 Route::get('/', [controllerViews::class, 'showLogin'])->name('login');
 Route::post('iniciarSesion', [controllerViews::class, 'iniciarSesion'])->name('inicSes');
@@ -26,11 +27,11 @@ Route::post('editarArticulo', [controllerViews::class, 'editArtics'])->name('edi
 Route::get('borrarArticulo', [controllerViews::class, 'deleteArtics'])->name('delArtic');
 
 //USUARIO
-Route::get('agregarUsuario', [controllerViews::class, 'addUsu'])->name('addUsu');
-Route::get('consultarUsuario', [controllerViews::class, 'consUsu'])->name('consUsu');
-Route::get('editarUsuario', [controllerViews::class, 'editUsu'])->name('editUsu');
+//Route::get('agregarUsuario', [controllerViews::class, 'addUsu'])->name('addUsu');
+//Route::get('consultarUsuario', [controllerViews::class, 'consUsu'])->name('consUsu');
+//Route::get('editarUsuario', [controllerViews::class, 'editUsu'])->name('editUsu');
 Route::post('agregarUser', [controllerViews::class, 'agregar_usuario'])->name('addUsua');
-Route::post('editarUser', [controllerViews::class, 'editUse'])->name('editUse');
+//Route::post('editarUser', [controllerViews::class, 'editUse'])->name('editUse');
 Route::get('borrarUser', [controllerViews::class, 'deleteUse'])->name('delUse');
 
 //PROVEEDOR
@@ -53,3 +54,10 @@ Route::get('ventaRealizada', [controllerViews::class, 'ventaRealizada'])->name('
 Route::get('realizarpedido', [controllerViews::class, 'realizarpedido'])->name('realip');
 
 Route::get('reportes', [controllerViews::class, 'reportes'])->name('report');
+
+//RUTAS CONTROLADOR USUARIOS -r
+Route::get('usuario/create', [controladorUsuarios::class, 'create'])->name('usuario.create');
+Route::post('usuario',[controladorUsuarios::class, 'store'])->name('usuario.store');
+Route::get('usuario',[controladorUsuarios::class, 'index'])->name('usuario.index');
+Route::get('usuario/{id}/edit',[controladorUsuarios::class, 'edit'])->name('usuario.edit');
+Route::put('usuario/{id}',[controladorUsuarios::class, 'update'])->name('usuario.update');

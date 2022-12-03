@@ -21,7 +21,7 @@
             <ul class="nav__links">
                 <li class="nav__link {{request()->routeIs('consComic','addComic', 'editComic')?'nav__link-active':'active'}}"><a href="{{route('consComic')}}">Comics</a></li>
                 <li class="nav__link {{request()->routeIs('consArtic', 'addArtic', 'editArtic')?'nav__link-active':'active'}}"><a href="{{route('consArtic')}}">Articulos</a></li>
-                <li class="nav__link {{request()->routeIs('consUsu', 'addUsu', 'editUsu')?'nav__link-active':'active'}}"><a href="{{route('consUsu')}}">Usuarios</a></li>
+                <li class="nav__link {{request()->routeIs('usuario.index', 'usuario.create', 'editUsu')?'nav__link-active':'active'}}"><a href="{{route('usuario.index')}}">Usuarios</a></li>
                 <li class="nav__link {{request()->routeIs('invent','realip')?'nav__link-active':'active'}}"><a href="{{route('invent')}}">Inventario</a></li>
                 <li class="nav__link {{request()->routeIs('consProve', 'addProve', 'editProve')?'nav__link-active':'active'}}"><a href="{{route('consProve')}}">Proveedores</a></li>
                 <li class="nav__link {{request()->routeIs('vent', 'report')?'nav__link-active':'active'}}"><a href="{{route('vent')}}">Ventas</a></li>
