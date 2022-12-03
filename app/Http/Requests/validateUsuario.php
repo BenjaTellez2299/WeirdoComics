@@ -26,7 +26,7 @@ class validateUsuario extends FormRequest
         return [
             //
             'txtNomb'=>'required',
-            'txtNoEmpleado'=>'numeric|max:99999999999|required',
+            'txtNoEmpleado'=>'numeric|digits_between:10,10|required',
             'txtContra'=>'min:8|required',
             'txtTurno'=>'max:20|required',
             'txtRol'=>'max:25|required',

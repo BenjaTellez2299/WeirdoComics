@@ -29,9 +29,15 @@ class validateProveedor extends FormRequest
             'txtDirreccion'=>'required',
             'txtPais'=>'required',
             'txtContacto'=>'required',
-            'txtNumFijo'=>'required |numeric|max:99999999999999',
-            'txtNumCelu'=>'required |numeric|max:99999999999999',
-            'txtCorreo'=>'required |email|',
+<<<<<<< Updated upstream
+            'txtNumFijo'=>'numeric|max:9999999999999|min:9999999999|required',
+            'txtNumCelu'=>'numeric|max:9999999999999|min:9999999999|required',
+            'txtCorreo'=>'email|required',
+=======
+            'txtNumFijo'=>'numeric|digits_between:10,13|required',
+            'txtNumCelu'=>'numeric|digits_between:10,13|required',
+            'txtCorreo'=>'email|required'
+>>>>>>> Stashed changes
         ];
     }
 }

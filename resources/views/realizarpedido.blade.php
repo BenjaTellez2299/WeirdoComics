@@ -70,8 +70,8 @@
     </div>
 
     <div class="form__foot">
-        <div class="form__img">
-            <img src="{!! asset('img/pedido.png') !!}" alt="Comics" class="form__img-pic">
+        <div class="btn__form">
+            <a href="https://mail.google.com" target="blank"><img src="{!! asset('img/pedido.png') !!}" alt="Comics" class="form__img-pic"></a>
         </div>
     </div>
 
