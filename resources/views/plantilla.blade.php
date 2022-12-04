@@ -21,7 +21,7 @@
         <nav>
             <ul class="barra__links">
                 <li class="barra__link {{request()->routeIs('consComic','addComic', 'editComic')?'barra__link-active':'active'}}"><a href="{{route('consComic')}}">Comics</a></li>
-                <li class="barra__link {{request()->routeIs('consArtic', 'addArtic', 'editArtic')?'barra__link-active':'active'}}"><a href="{{route('consArtic')}}">Articulos</a></li>
+                <li class="barra__link {{request()->routeIs('articulo.index', 'articulo.create', 'articulo.edit')?'barra__link-active':'active'}}"><a href="{{route('articulo.index')}}">Articulos</a></li>
                 <li class="barra__link {{request()->routeIs('usuario.index', 'usuario.create', 'usuario.edit')?'barra__link-active':'active'}}"><a href="{{route('usuario.index')}}">Usuarios</a></li>
                 <li class="barra__link {{request()->routeIs('invent','realip')?'barra__link-active':'active'}}"><a href="{{route('invent')}}">Inventario</a></li>
                 <li class="barra__link {{request()->routeIs('prov.index', 'addProve', 'editProve')?'barra__link-active':'active'}}"><a href="{{route('prov.index')}}">Proveedores</a></li>

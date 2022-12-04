@@ -7,11 +7,11 @@
     <div class="titulo">
         <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible">
         <img src="{!! asset('img/addArticulo.png') !!}" alt="Añadir Articulo" class="titulo__principal">
-        <a href="{{route('consArtic')}}" class="opcion"><img src="{!! asset('img/consultarArticulo.png') !!}" alt="Consultar Articulo" class="titulo__opcion"></a>
+        <a href="{{route('articulo.index')}}" class="opcion"><img src="{!! asset('img/consultarArticulo.png') !!}" alt="Consultar Articulo" class="titulo__opcion"></a>
     </div>
 
     <div class="contenedor__forms">
-        <form class="form" action="{{route('addArti')}}" method="post">
+        <form class="form" action="{{route('articulo.store')}}" method="post">
         @csrf 
             <div class="form__row">
                 <label class="form__label">Tipo</label>
@@ -39,23 +39,19 @@
             </div>
             <p class="form__warning">{{ $errors->first('txtPrecioCom')}}</p>
             <div class="form__row">
-                <label class="form__label">Precio Venta</label>
-                <input type="text" class="form__input" name="txtPreVenta" value="{{old('txtPreVenta')}}">
-            </div>
-            <p class="form__warning">{{ $errors->first('txtPreVenta')}}</p>
-            <div class="form__row">
-                <label class="form__label">Fecha de Ingreso</label>
-                <input type="date" class="form__input"  name="txtFechaIngre" value="{{old('txtFechaIngre')}}">
-            </div>
-            <p class="form__warning">{{ $errors->first('txtFechaIngre')}}</p>
-            <div class="form__row">
                 <label class="form__label">Proveedor</label>
-                <input type="text" class="form__input"  name="txtProveedor" value="{{old('txtProveedor')}}">   
+                <select class="form__input"  name="txtProveedor"  value="{{old('txtProveedor')}}">
+                    <option selected>Selecciona una opción...</option>
+                    @foreach($consultaProve as $consulta)
+                        <option value="{{$consulta->idProveedor}}">{{$consulta->empresa}}</option>
+                    @endforeach
+                </select>
             </div>
-            <p class="form__warning">{{ $errors->first('txtProveedor')}}</p>
+            <p class="form__warning">{{ $errors->first('txtTurno')}}</p>
+
             <div class="form__foot">
                 <div class="btn__form">
-                <a href="{{route('consArtic')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('consArtic')}}" class="btn__form-salir">Salir</a></a>
+                <a href="{{route('articulo.index')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('articulo.index')}}" class="btn__form-salir">Salir</a></a>
                 </div>
                 <div class="form__img">
                     <img src="{!! asset('img/articulos.png') !!}" alt="Comics" class="form__img-pic">

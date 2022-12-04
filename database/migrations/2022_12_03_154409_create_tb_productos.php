@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nombre_tipo');
             $table->string('edicion_marca');
             $table->string('company_descripcion');
-            $table->integer('categoria');
+            $table->string('categoria');
             $table->integer('cantidad');
             $table->double('precioCompra');
             $table->double('precioVenta');
