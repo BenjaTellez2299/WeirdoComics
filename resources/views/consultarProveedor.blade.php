@@ -5,9 +5,9 @@
     @section('contenido')
 
     @if (session()->has('confirm'))
-      <?php $empresa = session()->get('empresa')?>
+      <?php $empresa = session()->get('proveedor')?>
       {!!"<script> Swal.fire({
-        position: 'top',
+        position: 'center',
         icon: 'success',
         title: 'Se ha agregado una nueva empresa; {$empresa}',
         showConfirmButton: false,
@@ -15,10 +15,10 @@
       })</script>"!!}
     @endif
 
-    @if (session()->has('editap'))
+    @if (session()->has('edit'))
     <?php $proveedor = session()->get('proveedor')?>
       {!!"<script> Swal.fire({
-        position: 'top',
+        position: 'center',
         icon: 'info',
         title: 'Se ha editado el proveedor; {$proveedor}',
         showConfirmButton: false,
@@ -26,10 +26,10 @@
       })</script>"!!}
     @endif
 
-    @if (session()->has('eliminap'))
+    @if (session()->has('delete'))
     <?php $proveedor = session()->get('proveedor')?>
       {!!"<script> Swal.fire({
-        position: 'top',
+        position: 'center',
         icon: 'warning',
         title: 'Se ha eliminado el proveedor',
         showConfirmButton: false,
@@ -38,7 +38,7 @@
     @endif
 
     <div class="titulo">
-        <div class="opcion"><a href="{{route('addProve')}}" class="opcion__a"><img src="{!! asset('img/addProve.png') !!}" alt="Añadir Proveedor" class="titulo__opcion"></a></div>
+        <div class="opcion"><a href="{{route('prov.create')}}" class="opcion__a"><img src="{!! asset('img/addProve.png') !!}" alt="Añadir Proveedor" class="titulo__opcion"></a></div>
         <img src="{!! asset('img/consultarProve.png') !!}" alt="Consultar Proveedor" class="titulo__principal">
         <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible"> 
     </div>
@@ -58,6 +58,20 @@
                 <th>Borrar</th>
             </thead>
             <tbody>
+              @foreach ($consulProvs as $prov)
+                <tr>
+                  <td>{{$prov->empresa}}</td>
+                  <td>{{$prov->dirección}}</td>
+                  <td>{{$prov->pais}}</td>
+                  <td>{{$prov->contacto}}</td>
+                  <td>{{$prov->noFijo}}</td>
+                  <td>{{$prov->noCelu}}</td>
+                  <td>{{$prov->correo}}</td>
+                  <td><a href="{{route('realip')}}"><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
+                  <td><a href="{{route('prov.edit')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                  <td><a type="button" data-bs-toggle="modal" data-bs-target="#eliminarProveedor{{ $prov->idProveedor }}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                </tr>
+              @endforeach
                 <tr>
                     <td>Juguetron</td>
                     <td>Quéretaro Centro</td>
@@ -67,8 +81,8 @@
                     <td>442-693-2148</td>
                     <td>juanito@juguetron.com</td>
                     <td><a href="{{route('realip')}}"><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
-                    <td><a href="{{route('editProvee')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href="{{route('delProvee')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('prov.edit')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="#"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
                 <tr>
                     <td>Funko Store</td>
@@ -79,8 +93,8 @@
                     <td>442-693-8752</td>
                     <td>jorg@funkit.com</td>
                     <td><a href="{{route('realip')}}"><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
-                    <td><a href="{{route('editProvee')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href="{{route('delProvee')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('prov.edit')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="#"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
                 <tr>
                     <td>Mangas Shipping</td>
@@ -91,8 +105,8 @@
                     <td>55-692-60542</td>
                     <td>onichan@manguito.com</td>
                     <td><a href="{{route('realip')}}"><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
-                    <td><a href="{{route('editProvee')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href="{{route('delProvee')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a href="{{route('prov.edit')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="#"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
             </tbody>
         </table>
