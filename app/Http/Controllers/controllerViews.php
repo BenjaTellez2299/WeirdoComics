@@ -56,17 +56,17 @@ class controllerViews extends Controller
         return view('consultarUsuario');
     }
 
-    public function addProve(){
-        return view('agregarProveedor');
-    }
+    // public function addProve(){
+    //     return view('agregarProveedor');
+    // }
 
-    public function editProve(){
-        return view('editarProveedor');
-    }
+    // public function editProve(){
+    //     return view('editarProveedor');
+    // }
 
-    public function consProve(){
-        return view('consultarProveedor');
-    }
+    // public function consProve(){
+    //     return view('consultarProveedor');
+    // }
 
     public function inventario(){
         return view('inventario');
