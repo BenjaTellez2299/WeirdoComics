@@ -4,19 +4,19 @@
 
     @section('contenido')
     
-    @if (session()->has('confirm'))
-    <?php $usuario = session()->get('usuario')?>
+    @if (session()->has('usuarioagregado'))
+    <?php $nombre = session()->get('txtNomb')?>
     {!!"<script> Swal.fire({
         position: 'top',
         icon: 'success',
-        title: 'Se ha agregado un nuevo usuario; {$usuario}',
+        title: 'Se ha agregado un nuevo usuario; {$nombre}',
         showConfirmButton: false,
         timer: 3500
       })</script>"!!}
     @endif
 
-    @if (session()->has('edita'))
-    <?php $usuario = session()->get('usuario')?>
+    @if (session()->has('usuarioeditado'))
+    <?php $usuario = session()->get('txtNomb')?>
       {!!"<script> Swal.fire({
         position: 'top',
         icon: 'info',
@@ -38,7 +38,7 @@
     @endif
 
     <div class="titulo">
-        <div class="opcion"><a href="{{route('addUsu')}}" class="opcion__a"><img src="{!! asset('img/addUsuario.png') !!}" alt="Añadir Usuario" class="titulo__opcion"></a></div>
+        <div class="opcion"><a href="{{route('usuario.create')}}" class="opcion__a"><img src="{!! asset('img/addUsuario.png') !!}" alt="Añadir Usuario" class="titulo__opcion"></a></div>
         <img src="{!! asset('img/consultarUsuario.png') !!}" alt="Consultar Usuarios" class="titulo__principal">
         <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible">
     </div>
@@ -56,39 +56,54 @@
                 <th>Borrar</th>
             </thead>
             <tbody>
+              @foreach($consultaUsuarios as $consulta)
                 <tr>
-                    <td>Alfredo Madrigal Tercero</td>
-                    <td>121059641</td>
-                    <td>************</td>
-                    <td>Matutino</td>
-                    <td>Vendedor</td>
-                    <td>25-08-2001</td>
-                    <td><a href="{{route('editUsu')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href="{{route('delUse')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td>{{$consulta->nombre}}</td>
+                    <td>{{$consulta->noEmpleado}}</td>
+                    <td>{{$consulta->contra}}</td>
+                    <td>{{$consulta->turno}}</td>
+                    <td>{{$consulta->rol}}</td>
+                    <td>{{$consulta->fehcaNac}}</td>
+                    <td><a href="{{route('usuario.edit', $consulta->idUsuario)}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a class="eliminar-usuario"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
                 </tr>
-                <tr>
-                    <td>Gabriel Galván Niño</td>
-                    <td>154756632</td>
-                    <td>************</td>
-                    <td>Vespertino</td>
-                    <td>Encargado</td>
-                    <td>23-09-2002</td>
-                    <td><a href="{{route('editUsu')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href="{{route('delUse')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
-                </tr>
-                <tr>
-                    <td>Benjamín Enríquez Téllez</td>
-                    <td>121040060</td>
-                    <td>************</td>
-                    <td>Vespertino</td>
-                    <td>Administrador</td>
-                    <td>29-11-2000</td>
-                    <td><a href="{{route('editUsu')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href="{{route('delUse')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
-                </tr>
+              @endforeach
             </tbody>
         </table>
     </div>
-    
 
     @endsection
+
+
+@section('contenido')
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    
+    $('#eliminar-usuario').submit(function(e){
+        e.preventDefault();
+
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )
+          }
+        })
+
+    });
+    </script>
+
+
+@endsection
