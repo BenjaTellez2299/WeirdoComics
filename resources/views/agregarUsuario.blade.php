@@ -28,7 +28,6 @@
                 <input type="password" class="form__input" name="txtContra"  value="{{old('txtContra')}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtContra')}}</p>
-            
             <div class="form__row">
                 <label class="form__label">Turno</label>
                 <select class="form__input"  name="txtTurno"  value="{{old('txtTurno')}}">
