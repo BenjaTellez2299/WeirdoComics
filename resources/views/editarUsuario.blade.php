@@ -31,7 +31,11 @@
                 <p class="form__warning">{{ $errors->first('txtContra')}}</p>
                 <div class="form__row">
                     <label class="form__label">Turno</label>
-                    <input type="text" class="form__input" name="txtTurno"  value="{{$consultaIdUsu->turno}}">
+                    <select class="form__input"  name="txtTurno"  value="{{$consultaIdUsu->turno}}">
+                        <option selected>Selecciona una opción...</option>
+                        <option value="Matutino">Matutino</option>
+                        <option value="Vespertino">Vespertino</option>
+                    </select>
                 </div>
                 <p class="form__warning">{{ $errors->first('txtTurno')}}</p>
                 <div class="form__row">

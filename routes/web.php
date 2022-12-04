@@ -44,7 +44,6 @@ Route::get('borrarUser', [controllerViews::class, 'deleteUse'])->name('delUse');
 //Route::get('borrarProveedor', [controllerViews::class, 'deleteProveedor'])->name('delProvee');
 
 // RUTAS DE PROVEEDORES
-
 Route::get('prov/create', [controladorProveedores::class, 'create'])->name('prov.create');
 Route::post('prov/store', [controladorProveedores::class, 'store'])->name('prov.store');
 Route::get('prov/index', [controladorProveedores::class, 'index'])->name('prov.index');
