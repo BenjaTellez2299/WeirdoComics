@@ -24,7 +24,7 @@
                 <li class="barra__link {{request()->routeIs('articulo.index', 'articulo.create', 'articulo.edit')?'barra__link-active':'active'}}"><a href="{{route('articulo.index')}}">Articulos</a></li>
                 <li class="barra__link {{request()->routeIs('usuario.index', 'usuario.create', 'usuario.edit')?'barra__link-active':'active'}}"><a href="{{route('usuario.index')}}">Usuarios</a></li>
                 <li class="barra__link {{request()->routeIs('invent','realip')?'barra__link-active':'active'}}"><a href="{{route('invent')}}">Inventario</a></li>
-                <li class="barra__link {{request()->routeIs('prov.index', 'addProve', 'editProve')?'barra__link-active':'active'}}"><a href="{{route('prov.index')}}">Proveedores</a></li>
+                <li class="barra__link {{request()->routeIs('prove.index', 'prove.create', 'editProve')?'barra__link-active':'active'}}"><a href="{{route('prove.index')}}">Proveedores</a></li>
                 <li class="barra__link {{request()->routeIs('vent', 'report')?'barra__link-active':'active'}}"><a href="{{route('vent')}}">Ventas</a></li>
             </ul>
         </nav>
