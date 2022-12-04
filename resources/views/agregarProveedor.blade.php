@@ -7,11 +7,11 @@
     <div class="titulo">
         <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible">
         <img src="{!! asset('img/addProve.png') !!}" alt="Añadir Proveedor" class="titulo__principal">
-        <a href="{{route('consProve')}}" class="opcion"><img src="{!! asset('img/consultarProve.png') !!}" alt="Consultar Proovedores" class="titulo__opcion"></a>
+        <a href="{{route('prov.index')}}" class="opcion"><img src="{!! asset('img/consultarProve.png') !!}" alt="Consultar Proovedores" class="titulo__opcion"></a>
     </div>
 
     <div class="contenedor__forms">
-        <form class="form" action="agregarProveedor" method="post">
+        <form class="form" action="{{route('prov.store')}}" method="post">
         @csrf 
             <div class="form__row">
                 <label class="form__label">Empresa</label>
