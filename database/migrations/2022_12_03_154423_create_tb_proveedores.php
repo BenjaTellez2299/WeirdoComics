@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('dirección');
             $table->string('pais');
             $table->string('contacto');
-            $table->integer('noFijo');
-            $table->integer('noCelu');
+            $table->bigInteger('noFijo');
+            $table->bigInteger('noCelu');
             $table->string('correo');
             $table->timestamps();
         });

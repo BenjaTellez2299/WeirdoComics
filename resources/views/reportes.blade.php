@@ -7,7 +7,6 @@
     <div class="titulo">
         <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible">
         <img src="{!! asset('img/reporte.png') !!}" alt="Inventario" class="titulo__principalVen">
-
         <div class="opcion"><a href="{{route('vent')}}" class="opcion__a"><img src="{!! asset('img/ventas.png') !!}" alt="Reporte Ventas" class="titulo__opcionVen"></a></div>
     </div>
 
@@ -81,7 +80,7 @@
 
     <div class="contenedor__search">
 
-        <h2>Buscar Por Jugador</h2>
+        <h2>Buscar Por Vendedor</h2>
 
         <form class="form__search" action="">
             <div class="form__row">
