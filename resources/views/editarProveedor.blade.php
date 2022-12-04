@@ -10,46 +10,49 @@
     </div>
 
     <div class="contenedor__forms">
-        <form class="form" action="{{route('editProvee')}}" method="post">
+        <form class="form" action="{{route('prove.update', $consultaId->idProveedor)}}" method="post">
         @csrf 
+
+            {!!method_field('PUT')!!}
+        
             <div class="form__row">
                 <label class="form__label">Empresa</label>
-                <input type="text" class="form__input" name="txtEmpresa" value="{{old('txtEmpresa')}}">
+                <input type="text" class="form__input" name="txtEmpresa" value="{{$consultaId->empresa}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtEmpresa')}}</p>
             <div class="form__row">
                 <label class="form__label">Dirrección</label>
-                <input type="text" class="form__input" name="txtDirreccion" value="{{old('txtDirreccion')}}">
+                <input type="text" class="form__input" name="txtDireccion" value="{{$consultaId->dirección}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtDirreccion')}}</p>
             <div class="form__row">
                 <label class="form__label">País</label>
-                <input type="text" class="form__input" name="txtPais" value="{{old('txtPais')}}">
+                <input type="text" class="form__input" name="txtPais" value="{{$consultaId->pais}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtPais')}}</p>
             <div class="form__row">
                 <label class="form__label">Contacto</label>
-                <input type="text" class="form__input" name="txtContacto" value="{{old('txtContacto')}}">
+                <input type="text" class="form__input" name="txtContacto" value="{{$consultaId->contacto}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtContacto')}}</p>
             <div class="form__row">
                 <label class="form__label">Número Fijo</label>
-                <input type="text" class="form__input"  name="txtNumFijo" value="{{old('txtNumFijo')}}">
+                <input type="text" class="form__input"  name="txtNumFijo" value="{{$consultaId->noFijo}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtNumFijo')}}</p>
             <div class="form__row">
                 <label class="form__label">Número Celular</label>
-                <input type="text" class="form__input" name="txtNumCelu" value="{{old('txtNumCelu')}}">
+                <input type="text" class="form__input" name="txtNumCelu" value="{{$consultaId->noCelu}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtNumCelu')}}</p>
             <div class="form__row">
                 <label class="form__label">Correo</label>
-                <input type="text" class="form__input" name="txtCorreo" value="{{old('txtCorreo')}}">
+                <input type="text" class="form__input" name="txtCorreo" value="{{$consultaId->correo}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtCorreo')}}</p>
             <div class="form__foot">
                 <div class="btn__form">
-                    <a href="{{route('prov.index')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('prov.index')}}" class="btn__form-salir">Salir</a></a>
+                    <a href="{{route('prove.index')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('prove.index')}}" class="btn__form-salir">Salir</a></a>
                 </div>
                 <div class="form__img">
                     <img src="{!! asset('img/proveedores.png') !!}" alt="Comics" class="form__img-pic">

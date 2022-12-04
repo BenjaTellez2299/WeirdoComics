@@ -42,16 +42,7 @@ Route::get('borrarUser', [controllerViews::class, 'deleteUse'])->name('delUse');
 //Route::get('editarProveedor', [controllerViews::class, 'editProve'])->name('editProve');
 //Route::post('agregarProveedor', [controllerViews::class, 'agregar_proveedor'])->name('addPro');
 //Route::post('editarProveedor', [controllerViews::class, 'editProveedor'])->name('editProvee');
-//Route::get('borrarProveedor', [controllerViews::class, 'deleteProveedor'])->name('delProvee');
-
-// RUTAS DE PROVEEDORES
-Route::get('prov/create', [controladorProveedores::class, 'create'])->name('prov.create');
-Route::post('prov/store', [controladorProveedores::class, 'store'])->name('prov.store');
-Route::get('prov/index', [controladorProveedores::class, 'index'])->name('prov.index');
-Route::get('prov/{id}/edit', [controladorProveedores::class, 'edit'])->name('prov.edit');
-Route::put('prov/{id}', [controladorProveedores::class, 'update'])->name('prov.update');
-Route::delete('prov/{id}', [controladorProveedores::class, 'destroy'])->name('prov.destroy');
-
+Route::get('borrarProveedor', [controllerViews::class, 'deleteProveedor'])->name('delProvee');
 
 //Inventarios
 Route::get('inventario', [controllerViews::class, 'inventario'])->name('invent');
@@ -79,3 +70,11 @@ Route::post('articulo',[controladorArticulos::class, 'store'])->name('articulo.s
 Route::get('articulo',[controladorArticulos::class, 'index'])->name('articulo.index');
 Route::get('articulo/{id}/edit',[controladorArticulos::class, 'edit'])->name('articulo.edit');
 Route::put('articulo/{id}',[controladorArticulos::class, 'update'])->name('articulo.update');
+
+//RUTAS CONTROLADOR PROVEEDORES -r
+Route::get('prove/create', [controladorProveedores::class, 'create'])->name('prove.create');
+Route::post('prove', [controladorProveedores::class, 'store'])->name('prove.store');
+Route::get('prove', [controladorProveedores::class, 'index'])->name('prove.index');
+Route::get('prove/{id}/edit', [controladorProveedores::class, 'edit'])->name('prove.edit');
+Route::put('prove/{id}', [controladorProveedores::class, 'update'])->name('prove.update');
+//Route::delete('prov/{id}', [controladorProveedores::class, 'destroy'])->name('prov.destroy');

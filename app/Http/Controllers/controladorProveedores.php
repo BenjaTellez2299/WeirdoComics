@@ -25,7 +25,7 @@ class controladorProveedores extends Controller
     {
         DB::table('tb_proveedores')->insert([
             "empresa"=>$request->input('txtEmpresa'),
-            "dirección"=>$request->input('txtDirreccion'),
+            "dirección"=>$request->input('txtDireccion'),
             "pais"=>$request->input('txtPais'),
             "contacto"=>$request->input('txtContacto'),
             "noFijo"=>$request->input('txtNumFijo'),
@@ -35,7 +35,7 @@ class controladorProveedores extends Controller
             "updated_at"=>Carbon::now(),
         ]);
 
-        return redirect('prov/index')->with('confirm','Se guardo exitosamente')->with('proveedor', $request->txtEmpresa);
+        return redirect('prove')->with('proveeagregado','Proveedor Agregado Correctamente')->with('txtEmpresa', $request->txtEmpresa);
     }
 
     public function show($id)
@@ -45,16 +45,16 @@ class controladorProveedores extends Controller
 
     public function edit($id)
     {
-        $conPro = DB::table('tb_proveedores')->where('idProveedor',$id)->first();
+        $consultaId = DB::table('tb_proveedores')->where('idProveedor',$id)->first();
 
-        return view('editarProveedor', compact('conPro'));
+        return view('editarProveedor', compact('consultaId'));
     }
 
     public function update(validateProveedor $request, $id)
     {
         DB::table('tb_proveedores')->where('idProveedor',$id)->update([
             "empresa"=>$request->input('txtEmpresa'),
-            "dirección"=>$request->input('txtDirreccion'),
+            "dirección"=>$request->input('txtDireccion'),
             "pais"=>$request->input('txtPais'),
             "contacto"=>$request->input('txtContacto'),
             "noFijo"=>$request->input('txtNumFijo'),
@@ -63,7 +63,7 @@ class controladorProveedores extends Controller
             "updated_at"=>Carbon::now(),
         ]);
 
-        return redirect('prov/index')->with('edit','Se edito exitosamente')->with('proveedor', $request->txtEmpresa);
+        return redirect('prove')->with('proveedoreditado','Proveedor Editado Correctamente')->with('txtEmpresa', $request->txtEmpresa);
     }
 
     public function destroy($id)
