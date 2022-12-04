@@ -56,7 +56,7 @@
 
             <div class="form__foot">
                 <div class="btn__form">
-                     <a href="{{route('consProve')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('consProve')}}" class="btn__form-salir">Salir</a></a>
+                     <a href="{{route('prov.index')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('prov.index')}}" class="btn__form-salir">Salir</a></a>
                 </div>
                 <div class="form__img">
                     <img src="{!! asset('img/proveedores.png') !!}" alt="Comics" class="form__img-pic">

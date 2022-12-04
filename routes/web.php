@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\controladorProveedores;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controllerViews;
+use App\Http\Controllers\controladorProveedores;
 
 Route::get('/', [controllerViews::class, 'showLogin'])->name('login');
 Route::post('iniciarSesion', [controllerViews::class, 'iniciarSesion'])->name('inicSes');
@@ -33,6 +33,13 @@ Route::post('agregarUser', [controllerViews::class, 'agregar_usuario'])->name('a
 Route::post('editarUser', [controllerViews::class, 'editUse'])->name('editUse');
 Route::get('borrarUser', [controllerViews::class, 'deleteUse'])->name('delUse');
 
+//PROVEEDOR
+//Route::get('agregarProveedor', [controllerViews::class, 'addProve'])->name('addProve');
+//Route::get('consultarProveedor', [controllerViews::class, 'consProve'])->name('consProve');
+//Route::get('editarProveedor', [controllerViews::class, 'editProve'])->name('editProve');
+//Route::post('agregarProveedor', [controllerViews::class, 'agregar_proveedor'])->name('addPro');
+//Route::post('editarProveedor', [controllerViews::class, 'editProveedor'])->name('editProvee');
+//Route::get('borrarProveedor', [controllerViews::class, 'deleteProveedor'])->name('delProvee');
 
 // RUTAS DE PROVEEDORES
 
