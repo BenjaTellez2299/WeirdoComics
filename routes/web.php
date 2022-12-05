@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\controladorArticulos;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controllerViews;
 use App\Http\Controllers\controladorProveedores;
@@ -20,18 +21,18 @@ Route::post('editarComics', [controllerViews::class, 'editComics'])->name('editC
 Route::get('borrarComic', [controllerViews::class, 'deleteComics'])->name('delComic');
 
 //ARTÍCULO
-Route::get('agregarArticulo', [controllerViews::class, 'addArtic'])->name('addArtic');
-Route::get('consultarArticulo', [controllerViews::class, 'consArtic'])->name('consArtic');
-Route::get('editarArticulo', [controllerViews::class, 'editArtic'])->name('editArtic');
-Route::post('agregarArticulo', [controllerViews::class, 'agregar_articulos'])->name('addArti');
-Route::post('editarArticulo', [controllerViews::class, 'editArtics'])->name('editArtics');
+//Route::get('agregarArticulo', [controllerViews::class, 'addArtic'])->name('addArtic');
+//Route::get('consultarArticulo', [controllerViews::class, 'consArtic'])->name('consArtic');
+//Route::get('editarArticulo', [controllerViews::class, 'editArtic'])->name('editArtic');
+//Route::post('agregarArticulo', [controllerViews::class, 'agregar_articulos'])->name('addArti');
+//Route::post('editarArticulo', [controllerViews::class, 'editArtics'])->name('editArtics');
 Route::get('borrarArticulo', [controllerViews::class, 'deleteArtics'])->name('delArtic');
 
 //USUARIO
 //Route::get('agregarUsuario', [controllerViews::class, 'addUsu'])->name('addUsu');
 //Route::get('consultarUsuario', [controllerViews::class, 'consUsu'])->name('consUsu');
 //Route::get('editarUsuario', [controllerViews::class, 'editUsu'])->name('editUsu');
-Route::post('agregarUser', [controllerViews::class, 'agregar_usuario'])->name('addUsua');
+//Route::post('agregarUser', [controllerViews::class, 'agregar_usuario'])->name('addUsua');
 //Route::post('editarUser', [controllerViews::class, 'editUse'])->name('editUse');
 Route::get('borrarUser', [controllerViews::class, 'deleteUse'])->name('delUse');
 
@@ -41,17 +42,7 @@ Route::get('borrarUser', [controllerViews::class, 'deleteUse'])->name('delUse');
 //Route::get('editarProveedor', [controllerViews::class, 'editProve'])->name('editProve');
 //Route::post('agregarProveedor', [controllerViews::class, 'agregar_proveedor'])->name('addPro');
 //Route::post('editarProveedor', [controllerViews::class, 'editProveedor'])->name('editProvee');
-//Route::get('borrarProveedor', [controllerViews::class, 'deleteProveedor'])->name('delProvee');
-
-// RUTAS DE PROVEEDORES
-
-Route::get('prov/create', [controladorProveedores::class, 'create'])->name('prov.create');
-Route::post('prov/store', [controladorProveedores::class, 'store'])->name('prov.store');
-Route::get('prov/index', [controladorProveedores::class, 'index'])->name('prov.index');
-Route::get('prov/{id}/edit', [controladorProveedores::class, 'edit'])->name('prov.edit');
-Route::put('prov/{id}', [controladorProveedores::class, 'update'])->name('prov.update');
-Route::delete('prov/{id}', [controladorProveedores::class, 'destroy'])->name('prov.destroy');
-
+Route::get('borrarProveedor', [controllerViews::class, 'deleteProveedor'])->name('delProvee');
 
 //Inventarios
 Route::get('inventario', [controllerViews::class, 'inventario'])->name('invent');
@@ -72,3 +63,18 @@ Route::post('usuario',[controladorUsuarios::class, 'store'])->name('usuario.stor
 Route::get('usuario',[controladorUsuarios::class, 'index'])->name('usuario.index');
 Route::get('usuario/{id}/edit',[controladorUsuarios::class, 'edit'])->name('usuario.edit');
 Route::put('usuario/{id}',[controladorUsuarios::class, 'update'])->name('usuario.update');
+
+//RUTAS CONTROLADOR ARTICULOS -r
+Route::get('articulo/create', [controladorArticulos::class, 'create'])->name('articulo.create');
+Route::post('articulo',[controladorArticulos::class, 'store'])->name('articulo.store');
+Route::get('articulo',[controladorArticulos::class, 'index'])->name('articulo.index');
+Route::get('articulo/{id}/edit',[controladorArticulos::class, 'edit'])->name('articulo.edit');
+Route::put('articulo/{id}',[controladorArticulos::class, 'update'])->name('articulo.update');
+
+//RUTAS CONTROLADOR PROVEEDORES -r
+Route::get('prove/create', [controladorProveedores::class, 'create'])->name('prove.create');
+Route::post('prove', [controladorProveedores::class, 'store'])->name('prove.store');
+Route::get('prove', [controladorProveedores::class, 'index'])->name('prove.index');
+Route::get('prove/{id}/edit', [controladorProveedores::class, 'edit'])->name('prove.edit');
+Route::put('prove/{id}', [controladorProveedores::class, 'update'])->name('prove.update');
+//Route::delete('prov/{id}', [controladorProveedores::class, 'destroy'])->name('prov.destroy');

@@ -30,8 +30,6 @@ class validateArticulo extends FormRequest
             'txtDescripcion'=>'required',
             'txtCantidad'=>'numeric|required',
             'txtPrecioCom'=>'numeric|required',
-            'txtPreVenta'=>'numeric|required',
-            'txtFechaIngre'=>'date|required',
             'txtProveedor'=>'required',
         ];
     }

@@ -9,51 +9,44 @@
     </div>
 
     <div class="contenedor__forms">
-        <form class="form" action="{{route('editArtics')}}" method="post">
+        <form class="form" action="{{route('articulo.update', $consultaIdArt->idProducto)}}" method="post">
             @csrf 
+
+            {!!method_field('PUT')!!}
+            
                 <div class="form__row">
                     <label class="form__label">Tipo</label>
-                    <input type="text" class="form__input"  name="txtTipo" value="{{old('txtTipo')}}">
+                    <input type="text" class="form__input"  name="txtTipo" value="{{$consultaIdArt->nombre_tipo}}">
                 </div>
                 <p class="form__warning">{{ $errors->first('txtTipo')}}</p>
                 <div class="form__row">
                     <label class="form__label">Marca</label>
-                    <input type="text" class="form__input "  name="txtMarca" value="{{old('txtMarca')}}">  
+                    <input type="text" class="form__input "  name="txtMarca" value="{{$consultaIdArt->edicion_marca}}">  
                 </div>
                 <p class="form__warning">{{ $errors->first('txtMarca')}}</p>
                 <div class="form__row">
                     <label class="form__label">Descripcion</label>
-                    <input type="text" class="form__input"  name="txtDescripcion" value="{{old('txtDescripcion')}}">
+                    <input type="text" class="form__input"  name="txtDescripcion" value="{{$consultaIdArt->company_descripcion}}">
                 </div>
                 <p class="form__warning">{{ $errors->first('txtDescripcion')}}</p>
                 <div class="form__row">
                     <label class="form__label">Cantidad</label>
-                    <input type="text" class="form__input"  name="txtCantidad" value="{{old('txtCantidad')}}">  
+                    <input type="text" class="form__input"  name="txtCantidad" value="{{$consultaIdArt->cantidad}}">  
                 </div>
                 <p class="form__warning">{{ $errors->first('txtCantidad')}}</p>
                 <div class="form__row">
                     <label class="form__label">Precio Compra</label>
-                    <input type="text" class="form__input"  name="txtPrecioCom" value="{{old('txtPrecioCom')}}"> 
+                    <input type="text" class="form__input"  name="txtPrecioCom" value="{{$consultaIdArt->precioCompra}}"> 
                 </div>
                 <p class="form__warning">{{ $errors->first('txtPrecioCom')}}</p>
                 <div class="form__row">
-                    <label class="form__label">Precio Venta</label>
-                    <input type="text" class="form__input" name="txtPreVenta" value="{{old('txtPreVenta')}}">
-                </div>
-                <p class="form__warning">{{ $errors->first('txtPreVenta')}}</p>
-                <div class="form__row">
-                    <label class="form__label">Fecha de Ingreso</label>
-                    <input type="date" class="form__input"  name="txtFechaIngre" value="{{old('txtFechaIngre')}}">
-                </div>
-                <p class="form__warning">{{ $errors->first('txtFechaIngre')}}</p>
-                <div class="form__row">
                     <label class="form__label">Proovedor</label>
-                    <input type="text" class="form__input"  name="txtProveedor" value="{{old('txtProveedor')}}">   
+                    <input type="text" class="form__input"  name="txtProveedor" value="{{$consultaIdArt->proveedor_id}}">   
                 </div>
                 <p class="form__warning">{{ $errors->first('txtProveedor')}}</p>
             <div class="form__foot">
                 <div class="btn__form">
-                    <a href="{{route('consArtic')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('consArtic')}}" class="btn__form-salir">Salir</a></a>
+                    <a href="{{route('articulo.index')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('articulo.index')}}" class="btn__form-salir">Salir</a></a>
                 </div>
                 <div class="form__img">
                     <img src="{!! asset('img/articulos.png') !!}" alt="Comics" class="form__img-pic">
