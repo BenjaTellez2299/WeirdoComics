@@ -70,6 +70,6 @@ class controladorProveedores extends Controller
     {
         DB::table('tb_proveedores')->where('idProveedor',$id)->delete();
 
-        return redirect('prov/index')->with('delete','Se elimino correctamente');
+        return redirect('prove')->with('delete','Se elimino correctamente');
     }
 }

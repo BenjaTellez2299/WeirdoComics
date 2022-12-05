@@ -32,7 +32,7 @@
                 <div class="form__row">
                     <label class="form__label">Turno</label>
                     <select class="form__input"  name="txtTurno"  value="{{$consultaIdUsu->turno}}">
-                        <option selected>Selecciona una opción...</option>
+                        <option selected>{{$consultaIdUsu->turno}}</option>
                         <option value="Matutino">Matutino</option>
                         <option value="Vespertino">Vespertino</option>
                     </select>
@@ -40,7 +40,18 @@
                 <p class="form__warning">{{ $errors->first('txtTurno')}}</p>
                 <div class="form__row">
                     <label class="form__label">Rol</label>
-                    <input type="text" class="form__input" name="txtRol"  value="{{$consultaIdUsu->rol}}">
+                    <select class="form__input" name="txtRol"  value="{{old('txtRol')}}">
+                        <option selected disabled = "disabled" value="">Selecciona una opción...</option>
+                        <option value="{{$consultaIdUsu->rol}}" selected>
+                            @if ($consultaIdUsu->rol == 1)
+                            Administrador
+                            @else
+                            Vendedor
+                            @endif 
+                        </option>
+                        <option value="1">Administrador</option>
+                        <option value="2">Vendedor</option>
+                    </select>
                 </div>
                 <p class="form__warning">{{ $errors->first('txtRol')}}</p>
                 <div class="form__row">

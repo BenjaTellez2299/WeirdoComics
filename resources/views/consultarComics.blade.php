@@ -5,9 +5,9 @@
     @section('contenido')
 
     @if (session()->has('confirm'))
-    <?php $comic = session()->get('comic')?>
+    <?php $comic = session()->get('txtNombre')?>
       {!!"<script> Swal.fire({
-        position: 'top',
+        position: 'center',
         icon: 'success',
         title: 'Se ha agregado un nuevo comic; {$comic}',
         showConfirmButton: false,
@@ -15,10 +15,10 @@
       })</script>"!!}
     @endif
 
-    @if (session()->has('edita'))
-    <?php $comic = session()->get('comic')?>
+    @if (session()->has('edit'))
+    <?php $comic = session()->get('txtNombre')?>
       {!!"<script> Swal.fire({
-        position: 'top',
+        position: 'center',
         icon: 'info',
         title: 'Se ha editado el comic; {$comic}',
         showConfirmButton: false,
@@ -26,10 +26,10 @@
       })</script>"!!}
     @endif
 
-    @if (session()->has('elimina'))
-    <?php $comic = session()->get('comic')?>
+    @if (session()->has('delete'))
+    <?php $comic = session()->get('txtNombre')?>
       {!!"<script> Swal.fire({
-        position: 'top',
+        position: 'center',
         icon: 'warning',
         title: 'Se ha eliminado el comic',
         showConfirmButton: false,
@@ -38,7 +38,7 @@
     @endif
 
     <div class="titulo">
-        <div class="opcion"><a href="{{route('addComic')}}" class="opcion__a"><img src="{!! asset('img/addComic.png') !!}" alt="Añadir Comics" class="titulo__opcion"></a></div>
+        <div class="opcion"><a href="{{route('comic.create')}}" class="opcion__a"><img src="{!! asset('img/addComic.png') !!}" alt="Añadir Comics" class="titulo__opcion"></a></div>
         <img src="{!! asset('img/consultarComic.png') !!}" alt="Consultar Comics" class="titulo__principal">
         <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible">
     </div>
@@ -58,6 +58,20 @@
                 <th>Borrar</th>
             </thead>
             <tbody>
+              @foreach ($conComics as $consulta)
+                  <tr>
+                    <td>{{$consulta->nombre_tipo}}</td>
+                    <td>{{$consulta->edicion_marca}}</td>
+                    <td>{{$consulta->company_descripcion}}</td>
+                    <td>{{$consulta->cantidad}}</td>
+                    <td>{{$consulta->precioCompra}}</td>
+                    <td>{{$consulta->precioVenta}}</td>
+                    <td>{{$consulta->fecha}}</td>
+                    <td>{{$consulta->provs->empresa}}</td>
+                    <td><a href="{{route('editComic')}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
+                    <td><a href="{{route('delComic')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                  </tr>
+              @endforeach
                 <tr>
                     <td>Batman: El regreso del caballero oscuro</td>
                     <td>10ma</td>
