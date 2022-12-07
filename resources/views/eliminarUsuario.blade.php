@@ -1,18 +1,18 @@
 
 <!-- Modal -->
-<div class="modal fade" id="eliminarProveedor{{ $prov->idProveedor }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="eliminarProveedor" aria-hidden="true">
+<div class="modal fade" id="eliminarUsuario{{ $consulta->idUsuario }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="eliminarUsuario" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     
     <div class="modal-content">
       
         <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">¿Seguro Que Deseas Eliminar Este Proveedor?</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">¿Seguro Que Deseas Eliminar Este Usuario?</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
       <div class="modal-body">
-        <p class="card-text text-center"> Estaras eliminando al proveedor: <br><b> {{ $prov->empresa }} </b></p>
-            <form action="{{route('prov.destroy', $prov->idProveedor)}}" method="POST">
+        <p class="card-text text-center"> Estaras eliminando al usuario: <br><b> {{ $consulta->nombre }} </b></p>
+            <form action="{{route('usuario.destroy', $consulta->idUsuario)}}" method="POST">
                 @csrf
                 @method('delete')
       </div>

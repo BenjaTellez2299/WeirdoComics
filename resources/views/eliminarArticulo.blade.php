@@ -1,0 +1,32 @@
+
+<!-- Modal -->
+<div class="modal fade" id="eliminarArticulo{{ $consulta->idProducto }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="eliminarArticulo" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    
+    <div class="modal-content">
+      
+        <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">¿Seguro Que Deseas Eliminar Este Articulo?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body">
+        <p class="card-text text-center"> 
+          Estaras eliminando el articulo: <br>
+          <b> {{ $consulta->nombre_tipo }} </b> <br>
+          <i> {{$consulta->company_descripcion}} </i>
+        </p>
+        <form action="{{route('articulo.destroy', $consulta->idProducto)}}" method="POST">
+            @csrf
+            @method('delete')
+      </div>
+      
+      <div class="modal-footer">
+        <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</a>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+       </div>
+    </div>
+  
+   </div>
+</div>

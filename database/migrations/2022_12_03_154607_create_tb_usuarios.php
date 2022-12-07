@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('noEmpleado');
             $table->string('contra');
             $table->string('turno');
-            $table->string('rol');
+            $table->integer('rol');
             $table->date('fehcaNac');
             $table->timestamps();
         });

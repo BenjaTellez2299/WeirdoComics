@@ -22,7 +22,7 @@ class validateComics extends FormRequest
             'txtPreCompra'=>'numeric|required',
             'txtPreVenta'=>'numeric|required',
             'txtFecha'=>'date|required',
-            'txtProovedor'=>'max:255|required'
+            'txtProveedor'=>'max:255|required'
         ];
     }
 }
