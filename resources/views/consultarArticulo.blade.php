@@ -7,7 +7,7 @@
     @if (session()->has('articuloagregado'))
     <?php $articulo = session()->get('txtTipo')?>
       {!!"<script> Swal.fire({
-        position: 'top',
+        position: 'center',
         icon: 'success',
         title: 'Se ha agregado un nuevo articulo; {$articulo}',
         showConfirmButton: false,
@@ -18,7 +18,7 @@
     @if (session()->has('articuloeditado'))
     <?php $articulo = session()->get('txtTipo')?>
       {!!"<script> Swal.fire({
-        position: 'top',
+        position: 'center',
         icon: 'info',
         title: 'Se ha editado el articulo; {$articulo}',
         showConfirmButton: false,
@@ -26,10 +26,10 @@
       })</script>"!!}
     @endif
 
-    @if (session()->has('elimina'))
+    @if (session()->has('delete'))
     <?php $articulo = session()->get('articulo')?>
       {!!"<script> Swal.fire({
-        position: 'top',
+        position: 'center',
         icon: 'warning',
         title: 'Se ha eliminado el articulo',
         showConfirmButton: false,
@@ -67,7 +67,8 @@
                     <td>{{$consulta->precioVenta}}</td>
                     <td>{{$consulta->empresa}}</td>
                     <td><a href="{{route('articulo.edit', $consulta->idProducto)}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a href="{{route('delArtic')}}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a type="button" data-bs-toggle="modal" data-bs-target="#eliminarArticulo{{ $consulta->idProducto }}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    @include('eliminarArticulo')
                 </tr>
               @endforeach
             </tbody>

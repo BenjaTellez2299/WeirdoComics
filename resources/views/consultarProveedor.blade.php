@@ -70,6 +70,7 @@
                   <td><a href="{{route('realip')}}"><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
                   <td><a href="{{route('prove.edit', $prov->idProveedor)}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
                   <td><a type="button" data-bs-toggle="modal" data-bs-target="#eliminarProveedor{{ $prov->idProveedor }}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                  @include('eliminarProveedor')
                 </tr>
               @endforeach
             </tbody>
