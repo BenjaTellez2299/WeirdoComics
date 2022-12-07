@@ -41,7 +41,16 @@
                 <p class="form__warning">{{ $errors->first('txtPrecioCom')}}</p>
                 <div class="form__row">
                     <label class="form__label">Proovedor</label>
-                    <input type="text" class="form__input"  name="txtProveedor" value="{{$consultaIdArt->proveedor_id}}">   
+                    <select class="form__input"  name="txtProveedor"  value="{{old('txtProveedor')}}">
+                        <option selected disabled = "disabled" value="">Selecciona al Proveedor</option>
+                        @foreach ($conProvs as $proveedores)
+                        <option value="{{$proveedores->idProveedor}}"
+                            @if ($proveedores->idProveedor == $consultaIdArt->proveedor_id) 
+                            selected  
+                            @endif>
+                            {{$proveedores->empresa}}</option>    
+                        @endforeach
+                    </select>
                 </div>
                 <p class="form__warning">{{ $errors->first('txtProveedor')}}</p>
             <div class="form__foot">

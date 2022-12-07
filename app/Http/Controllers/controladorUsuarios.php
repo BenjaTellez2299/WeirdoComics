@@ -68,6 +68,8 @@ class controladorUsuarios extends Controller
 
     public function destroy($id)
     {
-        //
+        DB::table('tb_usuarios')->where('idUsuario',$id)->delete();
+
+        return redirect('usuario')->with('delete','Se elimino correctamente');
     }
 }

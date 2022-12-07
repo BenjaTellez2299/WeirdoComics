@@ -7,7 +7,7 @@
     @if (session()->has('usuarioagregado'))
     <?php $nombre = session()->get('txtNomb')?>
     {!!"<script> Swal.fire({
-        position: 'top',
+        position: 'center',
         icon: 'success',
         title: 'Se ha agregado un nuevo usuario; {$nombre}',
         showConfirmButton: false,
@@ -18,7 +18,7 @@
     @if (session()->has('usuarioeditado'))
     <?php $usuario = session()->get('txtNomb')?>
       {!!"<script> Swal.fire({
-        position: 'top',
+        position: 'center',
         icon: 'info',
         title: 'Se ha editado al usuario; {$usuario}',
         showConfirmButton: false,
@@ -26,10 +26,10 @@
       })</script>"!!}
     @endif
 
-    @if (session()->has('elimina'))
+    @if (session()->has('delete'))
     <?php $usuario = session()->get('usuario')?>
       {!!"<script> Swal.fire({
-        position: 'top',
+        position: 'center',
         icon: 'warning',
         title: 'Se ha eliminado al usuario',
         showConfirmButton: false,
@@ -65,7 +65,8 @@
                     <td>{{$consulta->rol}}</td>
                     <td>{{$consulta->fehcaNac}}</td>
                     <td><a href="{{route('usuario.edit', $consulta->idUsuario)}}"><img src="{!! asset('img/actualizar.png') !!}" alt="Editar" class="table__img"></a></td>
-                    <td><a class="eliminar-usuario"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    <td><a type="button" data-bs-toggle="modal" data-bs-target="#eliminarUsuario{{ $consulta->idUsuario }}"><img src="{!! asset('img/borrar.png') !!}" alt="Borrar" class="table__img"></a></td>
+                    @include('eliminarUsuario')  
                 </tr>
               @endforeach
             </tbody>

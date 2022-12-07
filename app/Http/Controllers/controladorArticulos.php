@@ -58,7 +58,9 @@ class controladorArticulos extends Controller
     {
         $consultaIdArt = DB::table('tb_productos')->where('idProducto', $id)->first();
 
-        return view('editarArticulo', compact('consultaIdArt'));
+        $conProvs = DB::table('tb_proveedores')->get();
+
+        return view('editarArticulo', compact('consultaIdArt', 'conProvs'));
     }
 
     public function update(validateArticulo $request, $id)
@@ -83,6 +85,8 @@ class controladorArticulos extends Controller
 
     public function destroy($id)
     {
-        //
+        DB::table('tb_productos')->where('idProducto',$id)->delete();
+
+        return redirect('articulo')->with('delete','Se elimino correctamente');
     }
 }
