@@ -17,12 +17,21 @@ class controladorArticulos extends Controller
         return view('consultarArticulo', compact('consultaArticulos', 'consultarProv'));
     }
 
+
+
+    //1 paso
+
     public function create()
     {
         $consultaProve=DB::table('tb_proveedores')->get();
 
         return view('agregarArticulo', compact('consultaProve'));
     }
+
+
+
+
+
 
     public function store(validateArticulo $request)
     {

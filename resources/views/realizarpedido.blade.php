@@ -8,6 +8,9 @@
         <img src="{!! asset('img/realizarpedido.png') !!}" alt="Realizar Pedido" class="titulo__principal">
     </div>
 
+
+
+
     <div class="contenedor__buscar">
         <form class="form__buscar" action="">
             <div class="form__row">
@@ -18,6 +21,9 @@
             </div>
         </form>
     </div>
+
+
+
 
     <div class="contenedor__buscar">
         <form class="form__buscar" action="">
@@ -31,6 +37,20 @@
     </div>
 
     <div class="table__contenedor">
+
+    <div class="contenedor__buscar">
+        <form class="form__buscar"  method="get" action="{{route('busquedap')}}" >
+            <div class="form__row">
+                <div class="col-sm-4">
+                  <input type="text" class="form__input" name="txtbusqueda" value="{{$texto}}">
+                </div>
+                <div class="col-auto">
+                  <input type="submit" class="btn__form-añadir" value="Buscar">
+                </div>
+            </div>
+        </form>
+    </div>
+
         <table class="table__consultar">
             <thead>
                 <th>Seleccionar</th>

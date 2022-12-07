@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\validateProveedor;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
+use App\Models\Busqueda;
 
 class controladorProveedores extends Controller
 {
@@ -71,5 +72,20 @@ class controladorProveedores extends Controller
         DB::table('tb_proveedores')->where('idProveedor',$id)->delete();
 
         return redirect('prove')->with('delete','Se elimino correctamente');
+    }
+
+
+
+
+    public function busquedap(Request $request)
+    {
+
+        $texto=trim($request->get('txtbusqueda'));
+        $prove=DB::table('tb_productos')->select('nombre_tipo','precioCompra','cantidad')
+        ->where('nombre_tipo','LIKE','%'.$texto.'%')
+        ->orWhere('cantidad','LIKE','%'.$texto.'%')
+        ->orderBy('nombre_tipo','asc');
+
+        return view('realizarpedido',compact('texto','prove'));
     }
 }

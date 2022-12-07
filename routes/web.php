@@ -86,3 +86,9 @@ Route::get('comic', [controladorComics::class, 'index'])->name('comic.index');
 Route::get('comic/{id}/edit', [controladorComics::class, 'edit'])->name('comic.edit');
 Route::put('comic/{id}', [controladorComics::class, 'update'])->name('comic.update');
 Route::delete('comic/{id}', [controladorComics::class, 'destroy'])->name('comic.destroy');
+
+
+//BUSQUEDA REALIZAR PEDIDO
+Route::resource('/busqueda',controladorProveedores::class)->name('*','busquedap');;
+
+
