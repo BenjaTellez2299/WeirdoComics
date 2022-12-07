@@ -31,12 +31,12 @@
                 <p class="form__warning">{{ $errors->first('txtDescripcion')}}</p>
                 <div class="form__row">
                     <label class="form__label">Cantidad</label>
-                    <input type="text" class="form__input"  name="txtCantidad" value="{{$consultaIdArt->cantidad}}">  
+                    <input type="number" class="form__input"  name="txtCantidad" value="{{$consultaIdArt->cantidad}}">  
                 </div>
                 <p class="form__warning">{{ $errors->first('txtCantidad')}}</p>
                 <div class="form__row">
                     <label class="form__label">Precio Compra</label>
-                    <input type="text" class="form__input"  name="txtPrecioCom" value="{{$consultaIdArt->precioCompra}}"> 
+                    <input type="double" class="form__input"  name="txtPrecioCom" value="{{$consultaIdArt->precioCompra}}"> 
                 </div>
                 <p class="form__warning">{{ $errors->first('txtPrecioCom')}}</p>
                 <div class="form__row">

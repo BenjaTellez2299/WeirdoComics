@@ -13,12 +13,12 @@ Route::post('iniciarSesion', [controllerViews::class, 'iniciarSesion'])->name('i
 Route::get('menu', [controllerViews::class, 'showMenu'])->name('menu');
 
 //COMICS
-Route::get('agregarComic', [controllerViews::class, 'addComic'])->name('addComic');
-Route::get('consultarComics', [controllerViews::class, 'consComic'])->name('consComic');
-Route::get('editarComic', [controllerViews::class, 'editComic'])->name('editComic');
-Route::post('agregarComics', [controllerViews::class, 'agregarComic'])->name('addComics');
-Route::post('editarComics', [controllerViews::class, 'editComics'])->name('editComics');
-Route::get('borrarComic', [controllerViews::class, 'deleteComics'])->name('delComic');
+//Route::get('agregarComic', [controllerViews::class, 'addComic'])->name('addComic');
+//Route::get('consultarComics', [controllerViews::class, 'consComic'])->name('consComic');
+//Route::get('editarComic', [controllerViews::class, 'editComic'])->name('editComic');
+//Route::post('agregarComics', [controllerViews::class, 'agregarComic'])->name('addComics');
+//Route::post('editarComics', [controllerViews::class, 'editComics'])->name('editComics');
+//Route::get('borrarComic', [controllerViews::class, 'deleteComics'])->name('delComic');
 
 //ARTÍCULO
 //Route::get('agregarArticulo', [controllerViews::class, 'addArtic'])->name('addArtic');
