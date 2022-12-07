@@ -11,7 +11,7 @@
     </div>
 
     <div class="contenedor__forms">
-        <form class="form" action="{{route('addComics')}}" method="POST">
+        <form class="form" action="{{route('comic.store')}}" method="POST">
             @csrf
             <div class="form__row">
                 <label class="form__label">Nombre</label>
@@ -39,20 +39,14 @@
             </div>
             <p class="form__warning">{{ $errors->first('txtPreCompra')}}</p>
             <div class="form__row">
-                <label class="form__label">Precio Venta</label>
-                <input type="text" class="form__input" name="txtPreVenta" value="{{old('txtPreVenta')}}">
-            </div>
-            <p class="form__warning">{{ $errors->first('txtPreVenta')}}</p>
-            <div class="form__row">
-                <label class="form__label">Fecha de Ingreso</label>
-                <input type="date" class="form__input" name="txtFecha" value="{{old('txtFecha')}}">
-            </div>
-            <p class="form__warning">{{ $errors->first('txtFecha')}}</p>
-            <div class="form__row">
                 <label class="form__label">Proveedor</label>
-                <input type="text" class="form__input" name="txtProovedor" value="{{old('txtProovedor')}}">
+                <select class="form__input"  name="txtProveedor"  value="{{old('txtProveedor')}}">
+                    <option selected>Selecciona una opción...</option>
+                    @foreach($consultaProve as $consulta)
+                        <option value="{{$consulta->idProveedor}}">{{$consulta->empresa}}</option>
+                    @endforeach
+                </select>
             </div>
-            <p class="form__warning">{{ $errors->first('txtProovedor')}}</p>
             <div class="form__foot">
                 <div class="btn__form">
                     <a href="{{route('consComic')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('consComic')}}" class="btn__form-salir">Salir</a></a>

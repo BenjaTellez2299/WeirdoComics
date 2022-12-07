@@ -20,11 +20,11 @@
         </div>
         <nav>
             <ul class="barra__links">
-                <li class="barra__link {{request()->routeIs('consComic','addComic', 'editComic')?'barra__link-active':'active'}}"><a href="{{route('consComic')}}">Comics</a></li>
+                <li class="barra__link {{request()->routeIs('comic.index','comic.create', 'comic.edit')?'barra__link-active':'active'}}"><a href="{{route('comic.index')}}">Comics</a></li>
                 <li class="barra__link {{request()->routeIs('articulo.index', 'articulo.create', 'articulo.edit')?'barra__link-active':'active'}}"><a href="{{route('articulo.index')}}">Articulos</a></li>
+                <li class="barra__link {{request()->routeIs('prove.index', 'prove.create', 'editProve')?'barra__link-active':'active'}}"><a href="{{route('prove.index')}}">Proveedores</a></li>
                 <li class="barra__link {{request()->routeIs('usuario.index', 'usuario.create', 'usuario.edit')?'barra__link-active':'active'}}"><a href="{{route('usuario.index')}}">Usuarios</a></li>
                 <li class="barra__link {{request()->routeIs('invent','realip')?'barra__link-active':'active'}}"><a href="{{route('invent')}}">Inventario</a></li>
-                <li class="barra__link {{request()->routeIs('prove.index', 'prove.create', 'editProve')?'barra__link-active':'active'}}"><a href="{{route('prove.index')}}">Proveedores</a></li>
                 <li class="barra__link {{request()->routeIs('vent', 'report')?'barra__link-active':'active'}}"><a href="{{route('vent')}}">Ventas</a></li>
             </ul>
         </nav>
@@ -43,6 +43,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
 </body>
 </html>

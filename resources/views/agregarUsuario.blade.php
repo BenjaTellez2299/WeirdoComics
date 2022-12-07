@@ -40,7 +40,11 @@
             
             <div class="form__row">
                 <label class="form__label">Rol</label>
-                <input type="text" class="form__input" name="txtRol"  value="{{old('txtRol')}}">
+                <select class="form__input" name="txtRol"  value="{{old('txtRol')}}">
+                    <option selected>Selecciona una opción...</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Vendedor</option>
+                </select>
             </div>
             <p class="form__warning">{{ $errors->first('txtRol')}}</p>
             <div class="form__row">
