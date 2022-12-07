@@ -8,21 +8,19 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('tb_vendido', function (Blueprint $table) {
+        Schema::create('tb_carrito', function (Blueprint $table) {
             
             //PK
-            $table->id('idProducto');
+            $table->id('idCarrito');
             //FK
-            $table->unsignedBigInteger('proveedor_id');
+            $table->unsignedBigInteger('producto_id');
             $table->unsignedBigInteger('venta_id');
             //DATOS
-            $table->string('nombre');
+            $table->integer('status');
             $table->integer('cantidad');
-            $table->double('precioCompra');
-            $table->double('precioVenta');
             $table->timestamps();
 
-            $table->foreign('proveedor_id')->references('idProveedor')->on('tb_proveedores')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('producto_id')->references('idProducto')->on('tb_productos')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('venta_id')->references('idVenta')->on('tb_ventas')->onDelete('cascade')->onUpdate('cascade');
         });
     }
