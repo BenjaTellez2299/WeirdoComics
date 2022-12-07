@@ -49,9 +49,14 @@ class controladorArticulos extends Controller
         return redirect('articulo')->with('articuloagregado','Articulo Agregado Correctamente')->with('txtTipo', $request->txtTipo);
     }
 
-    public function show($id)
+    public function show()
     {
-        //
+        $consultaInventario=DB::table('tb_productos')
+                            ->select('*')
+                            ->join('tb_proveedores','tb_proveedores.idProveedor','=','tb_productos.proveedor_id')
+                            ->get();
+
+        return view('inventario', compact('consultaInventario'));
     }
 
     public function edit($id)
