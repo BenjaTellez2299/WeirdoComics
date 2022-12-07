@@ -6,6 +6,7 @@ use App\Http\Controllers\controllerViews;
 use App\Http\Controllers\controladorProveedores;
 use App\Http\Controllers\controladorComics;
 use App\Http\Controllers\controladorUsuarios;
+use App\Http\Controllers\UserController;
 
 Route::get('/', [controllerViews::class, 'showLogin'])->name('login');
 Route::post('iniciarSesion', [controllerViews::class, 'iniciarSesion'])->name('inicSes');
@@ -86,3 +87,8 @@ Route::get('comic', [controladorComics::class, 'index'])->name('comic.index');
 Route::get('comic/{id}/edit', [controladorComics::class, 'edit'])->name('comic.edit');
 Route::put('comic/{id}', [controladorComics::class, 'update'])->name('comic.update');
 Route::delete('comic/{id}', [controladorComics::class, 'destroy'])->name('comic.destroy');
+
+Route::get('inventario', [controladorArticulos::class, 'show'])->name('inventario.show');
+
+//PDF
+Route::get('user-list-pdf', [UserController::class, 'exportPdf'])->name('users.pdf');
