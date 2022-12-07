@@ -37,12 +37,12 @@
             <p class="form__warning">{{ $errors->first('txtContacto')}}</p>
             <div class="form__row">
                 <label class="form__label">Número Fijo</label>
-                <input type="text" class="form__input"  name="txtNumFijo" value="{{$consultaId->noFijo}}">
+                <input type="number" class="form__input"  name="txtNumFijo" value="{{$consultaId->noFijo}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtNumFijo')}}</p>
             <div class="form__row">
                 <label class="form__label">Número Celular</label>
-                <input type="text" class="form__input" name="txtNumCelu" value="{{$consultaId->noCelu}}">
+                <input type="number" class="form__input" name="txtNumCelu" value="{{$consultaId->noCelu}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtNumCelu')}}</p>
             <div class="form__row">

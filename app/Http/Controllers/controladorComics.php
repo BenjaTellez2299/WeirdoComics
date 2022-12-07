@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class controladorComics extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $comic='Comic';
@@ -28,11 +23,6 @@ class controladorComics extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $consultaProve=DB::table('tb_proveedores')->get();
@@ -40,15 +30,9 @@ class controladorComics extends Controller
         return view('agregarComic', compact('consultaProve'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(validateComics $request)
     {
-        $precioCompra = $request->txtPrecioCom;
+        $precioCompra = $request->txtPreCompra;
 
         $precioVenta = (0.4*$precioCompra)+$precioCompra;
 
@@ -71,48 +55,47 @@ class controladorComics extends Controller
         return redirect('comic')->with('confirm','Comic Agregado Correctamente')->with('txtNombre', $request->txtNombre);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $consultaIdCom = DB::table('tb_productos')->where('idProducto', $id)->first();
+
+        $conProvs = DB::table('tb_proveedores')->get();
+
+        return view('editarComic', compact('consultaIdCom', 'conProvs'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(validateComics $request, $id)
     {
-        //
+        $precioCompra = $request->txtPreCompra;
+
+        $precioVenta = (0.4*$precioCompra)+$precioCompra;
+
+        $comic = 'Comic';
+
+        DB::table('tb_productos')->where('idProducto', $id)->update([
+            "proveedor_id" => $request -> input('txtProveedor'),
+            "nombre_tipo" => $request -> input('txtNombre'),
+            "edicion_marca" => $request -> input('txtEdicion'),
+            "company_descripcion" => $request -> input('txtCompany'),
+            "categoria" => $comic,
+            "cantidad" => $request -> input('txtCantidad'),
+            "precioCompra" => $request -> input('txtPreCompra'),
+            "precioVenta" => $precioVenta,
+            "updated_at" => Carbon::now()
+        ]);
+        
+        return redirect('comic')->with('edit','Comic Actualizado Correctamente')->with('txtNombre', $request->txtNombre);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        DB::table('tb_productos')->where('idProducto',$id)->delete();
+
+        return redirect('comic')->with('delete','Se elimino correctamente');
     }
 }

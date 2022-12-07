@@ -7,7 +7,7 @@
     <div class="titulo">
         <img src="{!! asset('img/consultarComic.png') !!}" class="titulo__invisible">
         <img src="{!! asset('img/addComic.png') !!}" alt="Añadir Comic" class="titulo__principal">
-        <a href="{{route('consComic')}}" class="opcion"><img src="{!! asset('img/consultarComic.png') !!}" alt="Consultar Comics" class="titulo__opcion"></a>
+        <a href="{{route('comic.index')}}" class="opcion"><img src="{!! asset('img/consultarComic.png') !!}" alt="Consultar Comics" class="titulo__opcion"></a>
     </div>
 
     <div class="contenedor__forms">
@@ -20,7 +20,7 @@
             <p class="form__warning">{{ $errors->first('txtNombre')}}</p>
             <div class="form__row">
                 <label class="form__label">Edición</label>
-                <input type="text" class="form__input" name="txtEdicion" value="{{old('txtEdicion')}}">
+                <input type="number" class="form__input" name="txtEdicion" value="{{old('txtEdicion')}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtEdicion')}}</p>
             <div class="form__row">
@@ -30,12 +30,12 @@
             <p class="form__warning">{{ $errors->first('txtCompany')}}</p>
             <div class="form__row">
                 <label class="form__label">Cantidad</label>
-                <input type="text" class="form__input" name="txtCantidad" value="{{old('txtCantidad')}}">
+                <input type="number" class="form__input" name="txtCantidad" value="{{old('txtCantidad')}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtCantidad')}}</p>
             <div class="form__row">
                 <label class="form__label">Precio Compra</label>
-                <input type="text" class="form__input" name="txtPreCompra" value="{{old('txtPreCompra')}}">
+                <input type="double" class="form__input" name="txtPreCompra" value="{{old('txtPreCompra')}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtPreCompra')}}</p>
             <div class="form__row">
@@ -49,7 +49,7 @@
             </div>
             <div class="form__foot">
                 <div class="btn__form">
-                    <a href="{{route('consComic')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('consComic')}}" class="btn__form-salir">Salir</a></a>
+                    <a href="{{route('comic.index')}}"><img src="{!! asset('img/salir.png') !!}" alt="Salir" class="btn__form-img"><a href="{{route('comic.index')}}" class="btn__form-salir">Salir</a></a>
                 </div>
                 <div class="form__img">
                     <img src="{!! asset('img/comics.png') !!}" alt="Comics" class="form__img-pic">

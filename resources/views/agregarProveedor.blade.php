@@ -38,13 +38,13 @@
 
             <div class="form__row">
                 <label class="form__label">Número Fijo</label>
-                <input type="text" class="form__input" name="txtNumFijo" value="{{old('txtNumFijo')}}">
+                <input type="number" class="form__input" name="txtNumFijo" value="{{old('txtNumFijo')}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtNumFijo')}}</p>
 
             <div class="form__row">
                 <label class="form__label">Número Celular</label>
-                <input type="text" class="form__input" name="txtNumCelu" value="{{old('txtNumCelu')}}">
+                <input type="number" class="form__input" name="txtNumCelu" value="{{old('txtNumCelu')}}">
             </div>
             <p class="form__warning">{{ $errors->first('txtNumCelu')}}</p>
 

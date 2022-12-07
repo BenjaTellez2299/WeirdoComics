@@ -21,7 +21,7 @@
                 <p class="form__warning">{{ $errors->first('txtNomb')}}</p>
                 <div class="form__row">
                     <label class="form__label">No.Empleado</label>
-                    <input type="text" class="form__input" name="txtNoEmpleado"  value="{{$consultaIdUsu->noEmpleado}}">
+                    <input type="number" class="form__input" name="txtNoEmpleado"  value="{{$consultaIdUsu->noEmpleado}}">
                 </div>
                 <p class="form__warning">{{ $errors->first('txtNoEmpleado')}}</p>
                 <div class="form__row">
@@ -49,8 +49,8 @@
                             Vendedor
                             @endif 
                         </option>
-                        <option value="1">Administrador</option>
-                        <option value="2">Vendedor</option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Vendedor">Vendedor</option>
                     </select>
                 </div>
                 <p class="form__warning">{{ $errors->first('txtRol')}}</p>
