@@ -71,7 +71,7 @@
 
     <div class="form__foot">
         <div class="btn__form">
-            <a href="https://mail.google.com" target="blank"><img src="{!! asset('img/pedido.png') !!}" alt="Comics" class="form__img-pic"></a>
+            <a href="{{route('users.pdf')}}" target="blank"><img src="{!! asset('img/pedido.png') !!}" alt="Comics" class="form__img-pic"></a>
         </div>
     </div>
 

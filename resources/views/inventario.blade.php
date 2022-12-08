@@ -20,6 +20,7 @@
         <table class="table__consultar">
             <thead>
                 <th>Nombre</th>
+                <th>Categoría</th>
                 <th>Cantidad</th>
                 <th>Precio Compra</th>
                 <th>Precio Venta</th>

@@ -8,6 +8,7 @@ use App\Http\Controllers\controladorProveedores;
 use App\Http\Controllers\controladorComics;
 use App\Http\Controllers\controladorInventario;
 use App\Http\Controllers\controladorUsuarios;
+use App\Http\Controllers\UserController;
 
 Route::get('/', [controllerViews::class, 'showLogin'])->name('login');
 Route::post('iniciarSesion', [controllerViews::class, 'iniciarSesion'])->name('inicSes');
@@ -100,3 +101,7 @@ Route::get('carrito', [controladorCarrito::class, 'index'])->name('carrito.index
 //RUTAS CONTROLADOR INVENTARIO -r
 Route::get('inventa', [controladorInventario::class, 'index'])->name('inventa.index');
 Route::get('search', [controladorInventario::class, 'search'])->name('inventa.search');
+Route::get('inventario', [controladorArticulos::class, 'show'])->name('inventario.show');
+
+//PDF
+Route::get('user-list-pdf', [UserController::class, 'exportPdf'])->name('users.pdf');
