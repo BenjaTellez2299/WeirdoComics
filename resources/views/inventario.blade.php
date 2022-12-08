@@ -9,9 +9,9 @@
     </div>
 
     <div class="contenedor__buscar">
-        <form class="form__buscar" action="">
+        <form class="form__buscar" action="{{route('inventa.search')}}">
             <div class="form__row">
-                <input type="text" class="form__input"> <a href="#"><img src="{!! asset('img/buscar.png') !!}" alt="Buscar" class="img__buscar"></a>
+                <input type="text" class="form__input" name="txtBuscarNombre" required> <button type="submit"><img src="{!! asset('img/buscar.png') !!}" alt="Buscar" class="img__buscar"></button>
             </div>
         </form>
     </div>
@@ -29,17 +29,29 @@
                 <th>Realizar Pedido</th>
             </thead>
             <tbody>
-                @foreach($consultaInventario as $consulta)
-                <tr>
-                    <td>{{$consulta->nombre_tipo}}</td>
-                    <td>{{$consulta->categoria}}</td>
-                    <td>{{$consulta->cantidad}}</td>
-                    <td>{{$consulta->precioCompra}}</td>
-                    <td>{{$consulta->precioVenta}}</td>
-                    <td>{{$consulta->fecha}}</td>
-                    <td>{{$consulta->empresa}}</td>
-                    <td><a href="{{route('realip')}}"><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
-                </tr>
+                @foreach ($conProduct as $product)
+                            <tr class="table__cero">
+                                <td>{{$product->nombre_tipo}}</td>
+                                <td>{{$product->cantidad}}</td>
+                                <td>{{$product->precioCompra}}</td>
+                                <td>{{$product->precioVenta}}</td>
+                                <td>{{$product->fecha}}</td>
+                                <td>{{$product->pro->empresa}}</td>
+                                <td><a type="button" data-bs-toggle="modal" data-bs-target="#agregarPedido{{ $product->idProducto }}"><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
+                                @include('pedido')
+                            </tr>     
+                @endforeach
+                @foreach ($conProducts as $product)
+                            <tr>
+                                <td>{{$product->nombre_tipo}}</td>
+                                <td>{{$product->cantidad}}</td>
+                                <td>{{$product->precioCompra}}</td>
+                                <td>{{$product->precioVenta}}</td>
+                                <td>{{$product->fecha}}</td>
+                                <td>{{$product->pro->empresa}}</td>
+                                <td><a type="button" data-bs-toggle="modal" data-bs-target="#agregarPedido{{ $product->idProducto }}"><img src="{!! asset('img/hacerPedido.png') !!}" alt="Pedido" class="table__img"></a></td>
+                                @include('pedido')
+                            </tr>     
                 @endforeach
             </tbody>
         </table>
