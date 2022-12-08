@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Http\Requests\validateCarrito;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+=======
+use Illuminate\Http\Request;
+>>>>>>> 48f97ac6f8790073ee84cf5c81ce062ddebda317
 
 class controladorCarrito extends Controller
 {
@@ -16,6 +20,7 @@ class controladorCarrito extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $conProducts= DB::table('tb_productos')->where('cantidad', '>', '0')->get();
         
         $conCar= DB::table('tb_carrito')->where('status', '1')->get();
@@ -24,6 +29,9 @@ class controladorCarrito extends Controller
         }
 
         return view('ventas', compact('conProducts', 'conCar'));
+=======
+        //
+>>>>>>> 48f97ac6f8790073ee84cf5c81ce062ddebda317
     }
 
     /**
@@ -31,6 +39,7 @@ class controladorCarrito extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function create(validateCarrito $request, $producto)
     {
         $venta ="0";
@@ -47,6 +56,11 @@ class controladorCarrito extends Controller
         ]);
         
         return redirect('carrito')->with('agregado','Producto Agregado Correctamente');
+=======
+    public function create()
+    {
+        //
+>>>>>>> 48f97ac6f8790073ee84cf5c81ce062ddebda317
     }
 
     /**
