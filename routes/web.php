@@ -6,6 +6,7 @@ use App\Http\Controllers\controllerViews;
 use App\Http\Controllers\controladorProveedores;
 use App\Http\Controllers\controladorComics;
 use App\Http\Controllers\controladorUsuarios;
+use App\Http\Controllers\UserController;
 
 Route::get('/', [controllerViews::class, 'showLogin'])->name('login');
 Route::post('iniciarSesion', [controllerViews::class, 'iniciarSesion'])->name('inicSes');
@@ -13,7 +14,7 @@ Route::post('iniciarSesion', [controllerViews::class, 'iniciarSesion'])->name('i
 Route::get('menu', [controllerViews::class, 'showMenu'])->name('menu');
 
 //COMICS
-Route::get('agregarComic', [controllerViews::class, 'addComic'])->name('addComic');
+//Route::get('agregarComic', [controllerViews::class, 'addComic'])->name('addComic');
 Route::get('consultarComics', [controllerViews::class, 'consComic'])->name('consComic');
 Route::get('editarComic', [controllerViews::class, 'editComic'])->name('editComic');
 Route::post('agregarComics', [controllerViews::class, 'agregarComic'])->name('addComics');
@@ -88,7 +89,14 @@ Route::put('comic/{id}', [controladorComics::class, 'update'])->name('comic.upda
 Route::delete('comic/{id}', [controladorComics::class, 'destroy'])->name('comic.destroy');
 
 
-//BUSQUEDA REALIZAR PEDIDO
-Route::resource('/busqueda',controladorProveedores::class)->name('*','busquedap');;
 
+//BUSQUEDA REALIZAR PEDIDO
+Route::resource('/busqueda',controladorProveedores::class)->name('*','busquedap');
+
+
+
+Route::get('inventario', [controladorArticulos::class, 'show'])->name('inventario.show');
+
+//PDF
+Route::get('user-list-pdf', [UserController::class, 'exportPdf'])->name('users.pdf');
 
