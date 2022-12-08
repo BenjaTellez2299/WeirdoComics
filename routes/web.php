@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\controladorArticulos;
+use App\Http\Controllers\controladorCarrito;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controllerViews;
 use App\Http\Controllers\controladorProveedores;
 use App\Http\Controllers\controladorComics;
+use App\Http\Controllers\controladorInventario;
 use App\Http\Controllers\controladorUsuarios;
 use App\Http\Controllers\UserController;
 
@@ -88,6 +90,17 @@ Route::get('comic/{id}/edit', [controladorComics::class, 'edit'])->name('comic.e
 Route::put('comic/{id}', [controladorComics::class, 'update'])->name('comic.update');
 Route::delete('comic/{id}', [controladorComics::class, 'destroy'])->name('comic.destroy');
 
+//RUTAS CONTROLADOR CARRITO -r
+Route::post('carrito/{id}/create', [controladorCarrito::class, 'create'])->name('carrito.create');
+//Route::post('carrito', [controladorCarrito::class, 'store'])->name('carrito.store');
+Route::get('carrito', [controladorCarrito::class, 'index'])->name('carrito.index');
+//Route::get('carrito/{id}/edit', [controladorCarrito::class, 'edit'])->name('carrito.edit');
+//Route::put('carrito/{id}', [controladorCarrito::class, 'update'])->name('carrito.update');
+//Route::delete('carrito/{id}', [controladorCarrito::class, 'destroy'])->name('carrito.destroy');
+
+//RUTAS CONTROLADOR INVENTARIO -r
+Route::get('inventa', [controladorInventario::class, 'index'])->name('inventa.index');
+Route::get('search', [controladorInventario::class, 'search'])->name('inventa.search');
 Route::get('inventario', [controladorArticulos::class, 'show'])->name('inventario.show');
 
 //PDF

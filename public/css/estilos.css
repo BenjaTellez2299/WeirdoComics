@@ -394,6 +394,15 @@ html{
     color: #fff;
 }
 
+.table__cero{
+    background-color: #dc8f92;
+}
+
+.table__cero td{
+    background-color: #dc8f92;
+}    
+
+
 .table__img{
     width: 40px;
     height: auto;

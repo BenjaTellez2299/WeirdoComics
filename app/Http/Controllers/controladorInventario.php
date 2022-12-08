@@ -2,16 +2,12 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-use App\Http\Requests\validateCarrito;
+use App\Http\Requests\validateBuscarNombre;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
-=======
-use Illuminate\Http\Request;
->>>>>>> 48f97ac6f8790073ee84cf5c81ce062ddebda317
 
-class controladorCarrito extends Controller
+class controladorInventario extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,18 +16,19 @@ class controladorCarrito extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        $conProducts= DB::table('tb_productos')->where('cantidad', '>', '0')->get();
+        $conProducts= DB::table('tb_productos')->orderBy('cantidad')->where('cantidad', '>', 0)->get();
+
+        $conProduct= DB::table('tb_productos')->where('cantidad', '=', 0)->get();
         
-        $conCar= DB::table('tb_carrito')->where('status', '1')->get();
-        foreach($conCar as $car){
-            $car->pro = DB::table('tb_productos')->where('idProducto',$car->producto_id)->first();
+        foreach($conProducts as $productos){
+            $productos->pro = DB::table('tb_proveedores')->where('idProveedor',$productos->proveedor_id)->first();
         }
 
-        return view('ventas', compact('conProducts', 'conCar'));
-=======
-        //
->>>>>>> 48f97ac6f8790073ee84cf5c81ce062ddebda317
+        foreach($conProduct as $producto){
+            $producto->pro = DB::table('tb_proveedores')->where('idProveedor',$producto->proveedor_id)->first();
+        }
+
+        return view('inventario', compact('conProducts', 'conProduct'));
     }
 
     /**
@@ -39,28 +36,24 @@ class controladorCarrito extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    public function create(validateCarrito $request, $producto)
+    public function search(validateBuscarNombre $request)
     {
-        $venta ="0";
+        $name = $request->input('txtBuscarNombre');
 
-        $status=1;
+        $conProducts= DB::table('tb_productos')->orderBy('cantidad')->where('nombre_tipo','LIKE','%'.$name.'%')->where('cantidad', '>', 0)->get();
 
-        DB::table('tb_carrito')->insert([
-            "producto_id" => $producto,
-            "venta_id" => $venta,
-            "status" => $status,
-            "cantidad" => $request -> input('txtCantida'),
-            "created_at" => Carbon::now(),
-            "updated_at" => Carbon::now()
-        ]);
+        $conProduct= DB::table('tb_productos')->where('nombre_tipo','LIKE','%'.$name.'%')->where('cantidad', '=', 0)->get();
         
-        return redirect('carrito')->with('agregado','Producto Agregado Correctamente');
-=======
-    public function create()
-    {
-        //
->>>>>>> 48f97ac6f8790073ee84cf5c81ce062ddebda317
+        foreach($conProducts as $productos){
+            $productos->pro = DB::table('tb_proveedores')->where('idProveedor',$productos->proveedor_id)->first();
+        }
+
+        foreach($conProduct as $producto){
+            $producto->pro = DB::table('tb_proveedores')->where('idProveedor',$producto->proveedor_id)->first();
+        }
+
+        return view('inventario', compact('conProducts', 'conProduct'));
+
     }
 
     /**
@@ -82,7 +75,7 @@ class controladorCarrito extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
