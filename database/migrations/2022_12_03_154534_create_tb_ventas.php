@@ -16,7 +16,6 @@ return new class extends Migration
             $table->unsignedBigInteger('usuario_id');
             //DATOS
             $table->date('fecha');
-            $table->integer('noProductos');
             $table->double('total');
             $table->timestamps();
 

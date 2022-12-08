@@ -47,21 +47,14 @@
                         <th>Agregar</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Gorra Batman: Caballero de la noche</td>
-                            <td>400</td>
-                            <td><a href=""><img src="{!! asset('img/agregar.png') !!}" alt="Editar" class="table__img"></a></td>
-                        </tr>
-                        <tr>
-                            <td>Figura de Acción Aquaman</td>
-                            <td>500</td>
-                            <td><a href=""><img src="{!! asset('img/agregar.png') !!}" alt="Editar" class="table__img"></a></td>
-                        </tr>
-                        <tr>
-                            <td>Llavero Funko Keychain The Batman</td>
-                            <td>200</td>
-                            <td><a href=""><img src="{!! asset('img/agregar.png') !!}" alt="Editar" class="table__img"></a></td>
-                        </tr>
+                        @foreach ($conProducts as $product)
+                            <tr>
+                                <td>{{$product->nombre_tipo}}</td>
+                                <td>{{$product->precioVenta}}</td>
+                                <td><a type="button" data-bs-toggle="modal" data-bs-target="#agregarProducto{{ $product->idProducto }}"><img src="{!! asset('img/agregar.png') !!}" alt="Editar" class="table__img"></a></td>
+                                @include('agregarCarrito') 
+                            </tr>     
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -76,21 +69,13 @@
                         <th>Cantidad</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Gorra Batman: Caballero de la noche</td>
-                            <td>400</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>Figura de Acción Aquaman</td>
-                            <td>500</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>Llavero Funko Keychain The Batman</td>
-                            <td>200</td>
-                            <td>1</td>
-                        </tr>
+                        @foreach ($conCar as $carrito)
+                            <tr>
+                                <td>{{$carrito->pro->nombre_tipo}}</td>
+                                <td>{{$carrito->pro->precioVenta}}</td>
+                                <td>{{$carrito->cantidad}}</td>
+                            </tr>  
+                        @endforeach
                     </tbody>
                 </table>
             </div>

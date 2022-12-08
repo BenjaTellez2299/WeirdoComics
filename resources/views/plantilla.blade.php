@@ -24,8 +24,8 @@
                 <li class="barra__link {{request()->routeIs('articulo.index', 'articulo.create', 'articulo.edit')?'barra__link-active':'active'}}"><a href="{{route('articulo.index')}}">Articulos</a></li>
                 <li class="barra__link {{request()->routeIs('prove.index', 'prove.create', 'editProve')?'barra__link-active':'active'}}"><a href="{{route('prove.index')}}">Proveedores</a></li>
                 <li class="barra__link {{request()->routeIs('usuario.index', 'usuario.create', 'usuario.edit')?'barra__link-active':'active'}}"><a href="{{route('usuario.index')}}">Usuarios</a></li>
-                <li class="barra__link {{request()->routeIs('invent','realip')?'barra__link-active':'active'}}"><a href="{{route('invent')}}">Inventario</a></li>
-                <li class="barra__link {{request()->routeIs('vent', 'report')?'barra__link-active':'active'}}"><a href="{{route('vent')}}">Ventas</a></li>
+                <li class="barra__link {{request()->routeIs('inventa.index','realip')?'barra__link-active':'active'}}"><a href="{{route('inventa.index')}}">Inventario</a></li>
+                <li class="barra__link {{request()->routeIs('carrito.index', 'report')?'barra__link-active':'active'}}"><a href="{{route('carrito.index')}}">Ventas</a></li>
             </ul>
         </nav>
         <a href="{{route('login')}}" class="barra__btn">Cerrar Sesion</a>

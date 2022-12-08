@@ -11,9 +11,7 @@
     <div class="contenedor__forms">
         <form class="form" action="{{route('articulo.update', $consultaIdArt->idProducto)}}" method="post">
             @csrf 
-
             {!!method_field('PUT')!!}
-            
                 <div class="form__row">
                     <label class="form__label">Tipo</label>
                     <input type="text" class="form__input"  name="txtTipo" value="{{$consultaIdArt->nombre_tipo}}">
